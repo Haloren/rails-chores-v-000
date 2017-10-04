@@ -1,1 +1,20 @@
-<h1><%= "#{@chore.name}" %></h1>
+<section class="todoapp">
+	<header class="header">
+		<h1>@chore.name</h1>
+		<input class="new-todo" placeholder="Add a task to this chore" autofocus>
+	</header>
+
+	<section class="main">
+		<ul class="todo-list">
+			<%# @chores.each do |chore| %>
+			<li>
+				<div class="view">
+					<label>Tasks here!</label>
+				</div>
+			</li>
+			<%# end %>
+		</ul>
+	</section>
+	<footer class="footer">
+	</footer>
+</section>
