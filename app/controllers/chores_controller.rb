@@ -11,10 +11,15 @@ class ChoresController < ApplicationController
   end
 
   def create
-    @chore = Chore.new
-    @chore.name = params[:chore][:name]
+    @chore = Chore.new(chore_params)
     @chore.save
 
-    redirect_to chore_path(@chore)
+    redirect_to chore_url(@chore)
   end
+
+  private
+
+    def chore_params
+      params.require(:chore).permit(:name)
+    end
 end
