@@ -1,7 +1,10 @@
 <section class="todoapp">
 	<header class="header">
 		<h1><%= @chore.name %></h1>
-		<input class="new-todo" placeholder="Add a task to this chore" autofocus>
+		<%= form_for([@chore, @task]) do |f| %>
+		`<%= f.text_field :description, :class => "new-todo" %>
+		<%= f.submit %>
+		<% end %>
 	</header>
 
 	<section class="main">
