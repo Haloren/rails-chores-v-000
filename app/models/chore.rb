@@ -1,4 +1,4 @@
 class Chore < ActiveRecord::Base
   has_many :tasks
-  validates :presence => :name
+  validates :name, :presence => true
 end

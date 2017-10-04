@@ -1,4 +1,4 @@
 class Task < ApplicationRecord
   belongs_to :chore
-  validates :presence => :description
+  validates :description, :presence => true
 end
