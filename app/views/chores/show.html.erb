@@ -6,13 +6,13 @@
 
 	<section class="main">
 		<ul class="todo-list">
-			<%# @chores.each do |chore| %>
+			<% @chore.tasks.each do |task| %>
 			<li>
 				<div class="view">
-					<label>Tasks here!</label>
+					<label><%= task.description %></label>
 				</div>
 			</li>
-			<%# end %>
+			<% end %>
 		</ul>
 	</section>
 	<footer class="footer">
