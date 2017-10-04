@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tasks/create'
+
   root 'chores#index'
   resources :chores do
     resources :tasks
