@@ -2,7 +2,7 @@
 	<header class="header">
 		<h1><%= @chore.name %></h1>
 		<%= form_for([@chore, @task]) do |f| %>
-		`<%= f.text_field :description, :class => "new-todo" %>
+		<%= f.text_field :description, :class => "new-todo", :placeholder => (@task.errors.full_messages_for(:description).first || "Create a new chore task..." ) %>
 		<%= f.submit %>
 		<% end %>
 	</header>
