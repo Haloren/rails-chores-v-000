@@ -6,22 +6,15 @@
 
 	<section class="main">
 		<ul class="todo-list">
+			<% @chores.each do |chore| %>
 			<li>
 				<div class="view">
-					<label><a href="#">Kitchen</a></label>
+					<label><%= link_to chore.name, chore_path(chore) %></label>
 				</div>
 			</li>
-			<li>
-				<div class="view">
-					<label><a href="#">Living Room</a></label>
-				</div>
-			</li>
-			<li>
-				<div class="view">
-					<label><a href="#">Bathroom</a></label>
-				</div>
-			</li>
+			<% end %>
 		</ul>
 	</section>
 	<footer class="footer">
 	</footer>
+</section>

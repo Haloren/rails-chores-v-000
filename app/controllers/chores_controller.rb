@@ -1,10 +1,10 @@
 class ChoresController < ApplicationController
 
   def index
+    @chores = Chore.all
   end
 
   def show
-    #raise params.inspect
     @chore = Chore.find(params[:id])
   end
 end
