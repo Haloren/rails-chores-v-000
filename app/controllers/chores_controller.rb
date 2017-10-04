@@ -13,9 +13,12 @@ class ChoresController < ApplicationController
 
   def create
     @chore = Chore.new(chore_params)
-    @chore.save
-
-    redirect_to chore_url(@chore)
+    if @chore.save
+      redirect_to chore_url(@chore)
+    else
+      @chores = Chore.all
+      render :index
+    end
   end
 
   private
