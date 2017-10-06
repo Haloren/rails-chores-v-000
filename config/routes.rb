@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   get 'tasks/create'
 
   root 'chores#index'
