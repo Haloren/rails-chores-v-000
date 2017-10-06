@@ -67,7 +67,7 @@ def new
   @user.addresses.build(:address_type => "Home")
   @user.addresses.build(:address_type => "Business")
   @user.addresses.build(:address_type => "Spacedress")
-  @user,build_team # belongs_to adds build_association
+  @user.build_team # belongs_to adds build_association
 end
 
 def create
@@ -118,3 +118,18 @@ end
 def incomplete?
   self.status == STATUS[:incomplete]
 end
+
+
+
+
+<%= user.builder.fields_for :house do |house_builder| %>
+<fieldset>
+  <legend>House name</legend>
+  <p>
+    <%= house_builder.label :name %>
+    <%= house_builder.text_field :name %>
+  </p>
+</fieldset>
+<% end %>
+
+<%= user_builder.submit %>
