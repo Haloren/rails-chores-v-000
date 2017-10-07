@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+
+  root 'chores#index'
+  get '/signin', to: 'sessions#new'
+  get '/logout', to: 'sessions#destro'
+
+  resources :sessions
   resources :users
   get 'tasks/create'
 
-  root 'chores#index'
+
   resources :chores do
     resources :tasks
   end
