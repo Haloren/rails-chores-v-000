@@ -1,10 +1,12 @@
-class Task < ApplicationRecord
+class Cycle < ApplicationRecord
 
-  # t.string "description"
+  # t.integer "user_id"
   # t.integer "chore_id"
+  # t.integer "status", default: 0
   # t.datetime "created_at", null: false
   # t.datetime "updated_at", null: false
 
   belongs_to :chore
-  validates :description, :presence => true
+  belongs_to :user
+
 end

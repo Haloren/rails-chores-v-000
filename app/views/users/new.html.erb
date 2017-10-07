@@ -1,0 +1,31 @@
+<h1>Sign Up!</h1>
+
+  <%= form_for(@user) do |f| %>
+    <p>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </p>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </p>
+
+    <%= f.fields_for :house do |house_builder| %>
+    <fieldset>
+      <legend>House name and city</legend>
+      <p>
+        <%= house_builder.label :name %>
+        <%= house_builder.text_field :name %>
+      </p>
+      <p>
+        <%= house_builder.label :city %>
+        <%= house_builder.text_field :city %>
+      </p>
+    </fieldset>
+    <% end %>
+  <%= f.submit %>
+<% end %>
