@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'chores#index'
   get '/signin', to: 'sessions#new'
-  get '/logout', to: 'sessions#destro'
+  get '/logout', to: 'sessions#destroy'
 
   resources :sessions
   resources :users

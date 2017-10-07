@@ -1,11 +1,15 @@
 <h1>Log in</h1>
 
 <%= form_tag :sessions do %>
-  <label for="Username:></label>
+  <label>Username</label>
   <%= text_field_tag :'user[username]' %>
 
-  <label for="Password:"></label>
+  <br></br>
+
+  <label>Password</label>
   <%= password_field_tag :'user[password]'%>
+
+  <br></br>
 
   <%= submit_tag 'Sign In' %>
 <% end %>
