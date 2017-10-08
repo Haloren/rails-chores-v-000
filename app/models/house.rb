@@ -5,6 +5,7 @@ class House < ApplicationRecord
   # t.datetime "updated_at", null: false
 
   has_many :users
+  has_many :chores
 
   validates :name, :presence => true
   validates :name, :uniqueness => true

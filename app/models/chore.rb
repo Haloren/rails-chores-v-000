@@ -5,5 +5,6 @@ class Chore < ApplicationRecord
   # t.datetime "updated_at", null: false
 
   has_many :tasks
+  belongs_to :house
   validates :name, :presence => true
 end
