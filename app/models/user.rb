@@ -20,11 +20,10 @@ class User < ApplicationRecord
     end
   end
 
-  def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.email = auth["info"]["email"]
+  def self.find_or_create_by_omniauth(auth_hash)
+    self.where(:email => auth_hash["info"]["email"]).first_or_create do |user|
+      user.password = SecureRandom.hex
     end
   end
+
 end
