@@ -1,7 +1,13 @@
 class UserChoresController < ApplicationController
+  include ApplicationHelper
 
   def index
-    @user_chores = UserChore.all
+    if logged_in?
+      @user_chore = UserChore.find_by(params[:chore_id])
+      @user_chores = UserChore.all
+    else
+      redirect_to new_session_path
+    end
   end
 
   def new

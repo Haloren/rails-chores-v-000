@@ -16,10 +16,9 @@
 				</div>
 			</li>
 			<% end %>
-			<%= form_for(@user_chore) do |f| %>
-				<%= f.hidden_field :chore_id, :value => @chore.id%>
+			<%= form_for @user_chore, :url => user_chores_path do |f| %>
+				<%= f.hidden_field :chore_id, :value => @chore.id %>
 				<%= f.collection_select(:user_id, @users, :id, :email, :include_blank => "Please select") %>
-				<%#= select("user", "email", @users.collect {|u| [ u.email, u.id] }, {:prompt => 'Select User', :selected => :user_id}) %>
 				<%= f.submit "Assign chore to user"%>
 			<% end %>
 		</ul>
