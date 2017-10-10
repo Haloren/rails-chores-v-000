@@ -1,0 +1,23 @@
+<section class="todoapp">
+	<header class="header">
+		<h1>The Chore Cycle</h1>
+
+	</header>
+
+	<section class="main">
+		<ul class="todo-list">
+			<% @user_chores.each do |uc| %>
+			<li>
+				<div class="view">
+					<label><%= uc.chore_id %></label>
+				</div>
+			</li>
+			<% end %>
+		</ul>
+
+	</section>
+
+	<footer class="footer">
+
+	</footer>
+</section>

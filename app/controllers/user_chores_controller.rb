@@ -1,16 +1,21 @@
 class UserChoresController < ApplicationController
 
+  def index
+    @user_chores = UserChore.all
+  end
+
   def new
     @user_chore = UserChore.new
   end
 
   def create
     @users = User.all
+
     @user_chore = UserChore.new(user_chore_params)
     if @user_chore.save
-      redirect_to user_path(@user)
+      redirect_to user_chores_path(@user_chore)
     else
-      render :new
+      render :'chores/show'
     end
   end
 
