@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'chores#index'
-  get '/signin' => 'sessions#new'
+  get '/login' => 'sessions#new'
   get "/auth/:provider/callback" => "sessions#create"
   get '/logout' => 'sessions#destroy'
 

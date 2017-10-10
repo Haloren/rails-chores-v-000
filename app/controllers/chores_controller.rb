@@ -1,4 +1,5 @@
 class ChoresController < ApplicationController
+  include ApplicationHelper
 
   def index
     @chore = Chore.new
