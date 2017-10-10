@@ -14,18 +14,5 @@
       <%= f.password_field :password %>
     </p>
 
-    <%= f.fields_for :house do |house_builder| %>
-    <fieldset>
-      <legend>House name and city</legend>
-      <p>
-        <%= house_builder.label :name %>
-        <%= house_builder.text_field :name %>
-      </p>
-      <p>
-        <%= house_builder.label :city %>
-        <%= house_builder.text_field :city %>
-      </p>
-    </fieldset>
-    <% end %>
   <%= f.submit %>
 <% end %>

@@ -19,5 +19,9 @@
 		</ul>
 	</section>
 	<footer class="footer">
+		<%= form_for(@user_chore) do |f| %>
+			<%= f.hidden_field :chore_id %>
+			<%= f.select("user_id", User.all.collect {|u| [ u.username, u.id ]}, {include_blank: 'None'}) %>
+		<% end %>
 	</footer>
 </section>
