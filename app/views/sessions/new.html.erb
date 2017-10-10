@@ -1,5 +1,5 @@
 <h1>Log in</h1>
-
+<%= link_to "Sign in with Github", "/auth/github" %>
 <%= form_tag :sessions do %>
   <label>Username</label>
   <%= text_field_tag :'user[username]' %>
