@@ -11,6 +11,12 @@ class UserChoresController < ApplicationController
       redirect_to user_path(@user)
     else
       render :new
+    end
   end
+
+  private
+    def user_chore_params
+      params.require(:user_chore).permit(:chore_id, :user_id)
+    end
 
 end
