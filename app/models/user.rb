@@ -12,9 +12,6 @@ class User < ApplicationRecord
   has_many :chores, through: :user_chores
 
 
-
-  validates :username, :presence => true
-  validates :username, :uniqueness => true
   validates :email, :presence => true
 
   def house_attributes=(house_attributes)
@@ -27,7 +24,7 @@ class User < ApplicationRecord
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.username = auth["info"]["username"]
+      user.email = auth["info"]["email"]
     end
   end
 end
