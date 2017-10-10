@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @user.build_house
   end
 
   def create

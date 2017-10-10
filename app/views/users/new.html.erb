@@ -1,14 +1,28 @@
 <h1>Sign Up!</h1>
 
-  <%= form_for(@user) do |f| %>
+  <%= form_for(@user) do |user_builder| %>
     <p>
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+      <%= user_builder.label :email %>
+      <%= user_builder.text_field :email %>
     </p>
     <p>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= user_builder.label :password %>
+      <%= user_builder.password_field :password %>
     </p>
+    
+    <%= user_builder.fields_for :house do |house_builder| %>
+    <fieldset>
+      <legend>House (name required, City only required for new Houses)</legend>
+      <p>
+        <%= house_builder.label :name %>
+        <%= house_builder.text_field :name %>
+      </p>
+      <p>
+        <%= house_builder.label :city %>
+        <%= house_builder.text_field :city %>
+      </p>
+    </fieldset>
+    <% end %>
 
-  <%= f.submit %>
+  <%= user_builder.submit %>
 <% end %>
