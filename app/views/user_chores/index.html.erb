@@ -11,9 +11,9 @@
 			<% @user_chores.each do |uc| %>
 			<li class="<%= "completed" if uc.complete? %>">
 				<div class="view">
-					<form action="/">
-						<input class="toggle" type="checkbox" <%= "checked='checked'" if uc.complete? %>>
-					</form>
+					<%= form_for(uc) do |f| %>
+						<%= f.check_box :status, :class => "toggle", :checked => (true if uc.complete?) %>
+					<% end %>
 
 					<label><%= uc.chore.name %> --- <%= uc.user.email %></label>
 				</div>
