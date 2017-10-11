@@ -1,0 +1,9 @@
+<li class="<%= li_class_for_user_chore(user_chore) %>">
+  <div class="view">
+    <%= form_for(user_chore) do |f| %>
+      <%= f.check_box :status, :class => "toggle", :checked => (true if user_chore.complete?) %>
+    <% end %>
+
+    <label><%= user_chore.chore.name %> --- <%= user_chore.user.email %></label>
+  </div>
+</li>

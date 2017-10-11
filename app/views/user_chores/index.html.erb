@@ -8,16 +8,8 @@
 		<input class="toggle-all" type="checkbox">
 		<label for="toggle-all">Mark all as complete</label>
 		<ul class="todo-list">
-			<% @user_chores.each do |uc| %>
-			<li class="<%= "completed" if uc.complete? %>">
-				<div class="view">
-					<%= form_for(uc) do |f| %>
-						<%= f.check_box :status, :class => "toggle", :checked => (true if uc.complete?) %>
-					<% end %>
-
-					<label><%= uc.chore.name %> --- <%= uc.user.email %></label>
-				</div>
-			</li>
+			<% @user_chores.each do |user_chore| %>
+				<%= render :partial => "user_chores/user_chore_li", :locals => {:user_chore => user_chore} %>
 			<% end %>
 		</ul>
 
