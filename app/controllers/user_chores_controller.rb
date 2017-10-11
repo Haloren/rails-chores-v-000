@@ -26,9 +26,16 @@ class UserChoresController < ApplicationController
     end
   end
 
+  def update
+    @user_chore = UserChore.find(params[:id])
+    @user_chore.update(user_chore_params)
+
+    redirect_to user_chores_path
+  end
+
   private
     def user_chore_params
-      params.require(:user_chore).permit(:chore_id, :user_id)
+      params.require(:user_chore).permit(:chore_id, :user_id, :status)
     end
 
 end
