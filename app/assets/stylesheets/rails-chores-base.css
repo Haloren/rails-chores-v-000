@@ -197,8 +197,8 @@ label[for='toggle-all'] {
 }
 
 .todo-list li label {
-	white-space: pre;
-	word-break: break-word;
+	white-space: pre-line;
+	word-break: break-all;
 	padding: 15px 60px 15px 15px;
 	margin-left: 45px;
 	display: block;
@@ -269,16 +269,16 @@ label[for='toggle-all'] {
 	            0 17px 2px -6px rgba(0, 0, 0, 0.2);
 }
 
-#todo-count {
+.todo-count {
 	float: left;
 	text-align: left;
 }
 
-#todo-count strong {
+.todo-count strong {
 	font-weight: 300;
 }
 
-#filters {
+.filters {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -287,11 +287,11 @@ label[for='toggle-all'] {
 	left: 0;
 }
 
-#filters li {
+.filters li {
 	display: inline;
 }
 
-#filters li a {
+.filters li a {
 	color: inherit;
 	margin: 3px;
 	padding: 3px 7px;
@@ -300,17 +300,17 @@ label[for='toggle-all'] {
 	border-radius: 3px;
 }
 
-#filters li a.selected,
-#filters li a:hover {
+.filters li a.selected,
+.filters li a:hover {
 	border-color: rgba(175, 47, 47, 0.1);
 }
 
-#filters li a.selected {
+.filters li a.selected {
 	border-color: rgba(175, 47, 47, 0.2);
 }
 
-#clear-completed,
-html #clear-completed:active {
+.clear-completed,
+html .clear-completed:active {
 	float: right;
 	position: relative;
 	line-height: 20px;
@@ -319,7 +319,7 @@ html #clear-completed:active {
 	position: relative;
 }
 
-#clear-completed:hover {
+.clear-completed:hover {
 	text-decoration: underline;
 }
 
@@ -350,16 +350,16 @@ html #clear-completed:active {
 	Can't use it globally since it destroys checkboxes in Firefox
 */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-	#toggle-all,
-	#todo-list li .toggle {
+	.toggle-all,
+	.todo-list li .toggle {
 		background: none;
 	}
 
-	#todo-list li .toggle {
+	.todo-list li .toggle {
 		height: 40px;
 	}
 
-	#toggle-all {
+	.toggle-all {
 		-webkit-transform: rotate(90deg);
 		transform: rotate(90deg);
 		-webkit-appearance: none;
@@ -368,11 +368,11 @@ html #clear-completed:active {
 }
 
 @media (max-width: 430px) {
-	#footer {
+	.footer {
 		height: 50px;
 	}
 
-	#filters {
+	.filters {
 		bottom: 10px;
 	}
 }

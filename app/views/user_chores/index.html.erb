@@ -9,11 +9,11 @@
 		<label for="toggle-all">Mark all as complete</label>
 		<ul class="todo-list">
 			<% @user_chores.each do |uc| %>
-			<li class="<%= "completed" if uc.complete? %>" >
+			<li class="<%= "completed" if uc.complete? %>">
 				<div class="view">
-					<%= form_for(uc) do |f| %>
-						<%= f.check_box :status, :class => "toggle", :checked => (true if uc.complete?) %>
-					<% end %>
+					<form action="/">
+						<input class="toggle" type="checkbox" <%= "checked='checked'" if uc.complete? %>>
+					</form>
 
 					<label><%= uc.chore.name %> --- <%= uc.user.email %></label>
 				</div>

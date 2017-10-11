@@ -22,5 +22,5 @@ class UserChore < ApplicationRecord
   def incomplete?
     self.status == STATUS[:incomplete]
   end
-  
+
 end

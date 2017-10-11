@@ -7,6 +7,11 @@ class Chore < ApplicationRecord
   has_many :tasks
   has_many :user_chores
   has_many :users, through: :user_chores
-  
+
   validates :name, :presence => true
+
+  def self.most_tasks
+    self.maximum(Task.count)
+  end
+
 end
