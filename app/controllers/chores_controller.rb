@@ -6,11 +6,10 @@ class ChoresController < ApplicationController
     @chores = Chore.all
   end
 
-
   def show
     @users = User.all
     @chore = Chore.find(params[:id])
-    @user_chore = UserChore.new
+    @user_chore = @chore.user_chores.build
     @task = @chore.tasks.build
   end
 

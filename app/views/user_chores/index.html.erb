@@ -7,8 +7,9 @@
 	<section class="main">
 		<ul class="todo-list">
 			<% @user_chores.each do |uc| %>
-			<li>
+			<li class=" <%= "completed" if uc.complete? %>" >
 				<div class="view">
+          <input class="toggle" type="checkbox" <%= "checked='checked'" if uc.complete? %>>
 					<label><%= uc.chore.name %> --- <%= uc.user.email %></label>
 				</div>
 			</li>

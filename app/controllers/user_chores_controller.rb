@@ -2,12 +2,11 @@ class UserChoresController < ApplicationController
   include ApplicationHelper
 
   def index
-    if logged_in?
-      @user_chore = UserChore.find_by(params[:chore_id])
-      @user_chores = UserChore.all
-    else
-      redirect_to new_session_path
-    end
+    @user_chores = UserChore.all
+  end
+
+  def show
+    @user_chore = UserChore.find_by(params[:id])
   end
 
   def new
@@ -15,12 +14,14 @@ class UserChoresController < ApplicationController
   end
 
   def create
-    @users = User.all
-
+    @user = User.find_by(params[:id])
+    @chore = Chore.find_by(params[:id])
     @user_chore = UserChore.new(user_chore_params)
+    #raise params.inspect
     if @user_chore.save
-      redirect_to user_chores_path(@user_chore)
+      redirect_to user_chores_path
     else
+
       render :'chores/show'
     end
   end

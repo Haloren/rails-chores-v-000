@@ -16,11 +16,12 @@
 				</div>
 			</li>
 			<% end %>
-			<%= form_for @user_chore, :url => user_chores_path do |f| %>
+			<%= form_for (@user_chore) do |f| %>
 				<%= f.hidden_field :chore_id, :value => @chore.id %>
-				<%= f.collection_select(:user_id, @users, :id, :email, :include_blank => "Please select") %>
-				<%= f.submit "Assign chore to user"%>
+				<%= f.collection_select :user_id, @users, :id, :email %>
+				<%= f.submit "Assign a user to a chore" %>
 			<% end %>
+
 		</ul>
 
 	</section>
