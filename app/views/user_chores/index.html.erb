@@ -1,21 +1,16 @@
 <section class="todoapp">
 	<header class="header">
 		<h1>The Chore Cycle</h1>
-
 	</header>
 
 	<section class="main">
 		<input class="toggle-all" type="checkbox">
 		<label for="toggle-all">Mark all as complete</label>
 		<ul class="todo-list">
-			<% @user_chores.each do |user_chore| %>
-				<%= render :partial => "user_chores/user_chore_li", :locals => {:user_chore => user_chore} %>
-			<% end %>
+			<%= render :collection => @user_chores, :partial => "user_chores/user_chore_li", :as => :user_chore %>
 		</ul>
-
 	</section>
 
 	<footer class="footer">
-
 	</footer>
 </section>
