@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
   include ApplicationHelper
 
   def index
-    @users = User.all
+    if logged_in?
+      @users = User.all
+    else
+      redirect_to '/login'
+    end
   end
 
   def new
@@ -27,7 +30,4 @@ class UsersController < ApplicationController
       params.require(:user).permit(:email, :password, :house_id, :house_attributes => [:name, :city])
     end
 
-    def set_user
-      @user = User.find(params[:id])
-    end
 end

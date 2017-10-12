@@ -2,15 +2,21 @@ class ChoresController < ApplicationController
   include ApplicationHelper
 
   def index
-    @chore = Chore.new
-    @chores = Chore.all
+    if logged_in?
+      @chore = Chore.new
+      @chores = Chore.all
+    else
+      redirect_to '/login'
   end
 
   def show
-    @users = User.all
-    @chore = Chore.find(params[:id])
-    @user_chore = @chore.user_chores.build
-    @task = @chore.tasks.build
+    if logged_in?
+      @users = User.all
+      @chore = Chore.find(params[:id])
+      @user_chore = @chore.user_chores.build
+      @task = @chore.tasks.build
+    else
+      redirect_to '/login'
   end
 
   def create
