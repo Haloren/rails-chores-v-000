@@ -17,7 +17,6 @@ class UserChoresController < ApplicationController
     @user = User.find_by(params[:id])
     @chore = Chore.find_by(params[:id])
     @user_chore = UserChore.new(user_chore_params)
-    #raise params.inspect
     if @user_chore.save
       redirect_to user_chores_path
     else

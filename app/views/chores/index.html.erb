@@ -2,8 +2,8 @@
 	<header class="header">
 		<h1>Chores</h1>
 		<%= form_for(@chore) do |f| %>
-		<%= f.text_field :name, :class => "new-todo", :placeholder => (@chore.errors.full_messages_for(:name).first || "Create a new chore..." ) %>
-		<%= f.submit :class => "hidden"%>
+			<%= f.text_field :name, :class => "new-todo", :placeholder => (@chore.errors.full_messages_for(:name).first || "Create a new chore..." ) %>
+			<%= f.submit :class => "hidden"%>
 		<% end %>
 	</header>
 

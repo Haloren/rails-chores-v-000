@@ -3,14 +3,7 @@ class UsersController < ApplicationController
   include ApplicationHelper
 
   def index
-  end
-
-  def show
-    if logged_in?
-      render :show
-    else
-      redirect_to action: 'index'
-    end
+    @users = User.all
   end
 
   def new
@@ -22,7 +15,7 @@ class UsersController < ApplicationController
    @user = User.new(user_params)
    if @user.save
      session[:user_id] = @user.id
-     redirect_to user_path(@user)
+     redirect_to user_chores_path
    else
      render :new
    end
