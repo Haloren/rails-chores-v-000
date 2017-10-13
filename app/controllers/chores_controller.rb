@@ -7,6 +7,7 @@ class ChoresController < ApplicationController
       @chores = Chore.all
     else
       redirect_to '/login'
+    end
   end
 
   def show
@@ -17,6 +18,7 @@ class ChoresController < ApplicationController
       @task = @chore.tasks.build
     else
       redirect_to '/login'
+    end
   end
 
   def create

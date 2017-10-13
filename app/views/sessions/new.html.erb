@@ -1,16 +1,16 @@
 
 <h1>Log in</h1>
 <%= link_to "Sign in with Github", "/auth/github" %>
-<%= form_tag :sessions do %>
-  <label>Email Address</label>
-  <%= text_field_tag :'user[email]' %>
+
+<%= form_for(:user, :url => login_path) do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
 
   <br></br>
 
-  <label>Password</label>
-  <%= password_field_tag :'user[password]'%>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
 
-  <br></br>
+  <%= f.submit %>
 
-  <%= submit_tag 'Sign In' %>
 <% end %>

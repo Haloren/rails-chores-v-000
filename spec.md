@@ -11,15 +11,15 @@ Specs:
     validations e.g. User, Recipe, Ingredient, Item)
  __ Include a class level ActiveRecord scope method (model object & class method name and URL to
     see the working feature e.g. User.most_recipes URL: /users/most_recipes)
- __ Include a nested form writing to an associated model using a custom attribute writer
+ [x] Include a nested form writing to an associated model using a custom attribute writer
     (form URL, model name e.g. /recipe/new, Item)
  [x] Include signup (how e.g. Devise)
  [x] Include login (how e.g. Devise)
  [x] Include logout (how e.g. Devise)
  [x] Include third party signup/login (how e.g. Devise/OmniAuth)
  [x] Include nested resource show or index (URL e.g. users/2/recipes)
- -- Include nested resource "new" form (URL e.g. recipes/1/ingredients)
- __ Include form display of validation errors (form URL e.g. /recipes/new)
+ [x[]] Include nested resource "new" form (URL e.g. recipes/1/ingredients)
+ [x] Include form display of validation errors (form URL e.g. /recipes/new)
 
     Confirm:
 

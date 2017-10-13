@@ -1,3 +1,15 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>Sign Up!</h1>
 
   <%= form_for(@user) do |user_builder| %>
@@ -9,7 +21,7 @@
       <%= user_builder.label :password %>
       <%= user_builder.password_field :password %>
     </p>
-    
+
     <%= user_builder.fields_for :house do |house_builder| %>
     <fieldset>
       <legend>House (name required, City only required for new Houses)</legend>
