@@ -23,4 +23,5 @@ class UserChore < ApplicationRecord
     self.status == STATUS[:incomplete]
   end
 
+  scope :overdue, lambda { where('due_date >= ?', Date.today) }
 end

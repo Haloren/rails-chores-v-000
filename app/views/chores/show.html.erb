@@ -18,7 +18,10 @@
 			<% end %>
 			<%= form_for (@user_chore) do |f| %>
 				<%= f.hidden_field :chore_id, :value => @chore.id %>
+				<%= f.label :user %>
 				<%= f.collection_select :user_id, @users, :id, :email %>
+				<%= f.label :due_date %>
+				<%= f.date_select :due_date %>
 				<%= f.submit "Assign a user to a chore" %>
 			<% end %>
 
