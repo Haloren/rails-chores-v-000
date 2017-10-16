@@ -23,11 +23,4 @@ class UserChore < ApplicationRecord
     self.status == STATUS[:incomplete]
   end
 
-  def self.users_chore
-    UserChore.joins(:user).where("user_chores.user_id = user_id")
-  end
-
-  # def self_user
-  #   self.joins(:users).where("user_id = self.user_id")
-  # end
 end
