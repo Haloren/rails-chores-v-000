@@ -9,6 +9,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @chore = Chore.find(params[:chore_id])
+    @task = Task.find(params[:task_id])
+    @task.destroy
+
+    redirect_to chore_path(@chore)
+  end
+
   private
 
     def task_params
