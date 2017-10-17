@@ -4,6 +4,6 @@
       <%= f.check_box :status, :class => "toggle", :checked => user_chore.complete? %>
     <% end %>
 
-    <h5> <%= user_chore.chore.name.split(@) %> => <%= user_chore.user.email %>  due: <%= user_chore.due_date %> </h5>
+    <h5> <%= user_chore.chore.name %> => <%= user_chore.user.email %>  due: <%= user_chore.due_date %> </h5>
   </div>
 <% end %>
