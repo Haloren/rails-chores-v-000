@@ -43,6 +43,13 @@ class UserChoresController < ApplicationController
     redirect_to user_chores_path
   end
 
+  def destroy
+    @user_chore = UserChore.find(params[:id])
+    @user_chore.destroy
+
+    redirect_to user_chores_path
+  end
+
   private
     def user_chore_params
       params.require(:user_chore).permit(:chore_id, :user_id, :status, :due_date)

@@ -5,5 +5,8 @@
     <% end %>
 
     <h5> <%= user_chore.chore.name %> => <%= user_chore.user.email %>  due: <%= user_chore.due_date %> </h5>
+    <%= button_to "x", user_chore_path(user_chore), :method => "delete", :class => "destroy" %>
+
+
   </div>
 <% end %>
