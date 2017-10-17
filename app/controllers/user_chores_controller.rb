@@ -13,17 +13,11 @@ class UserChoresController < ApplicationController
     #end
   end
 
-  # def show
-  #   if logged_in?
-  #     @user_chore = UserChore.find_by(params[:id])
-  #   # elsif logged_in?
-  #   #   @user_chore = UserChore.find_by(params[:id])
-  #   #   redirect_to chores_path
-  #   else
-  #
-  #     redirect_to '/login'
-  #   end
-  # end
+  def show
+    #byebug
+    @overdue_chores = UserChore.overdue
+
+  end
 
   def new
     @user_chore = UserChore.new

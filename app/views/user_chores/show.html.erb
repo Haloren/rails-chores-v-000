@@ -1,0 +1,7 @@
+<h1>Overdue Chores:</h1>
+<ul>
+<% @overdue_chores.each do |overdue| %>
+
+<li><%= overdue.chore.name %></li>
+<% end %>
+</ul>

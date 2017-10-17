@@ -33,4 +33,5 @@ class User < ApplicationRecord
     end
   end
 
+  # scope :gold_star, -> { where(user_chore.completed?)}
 end

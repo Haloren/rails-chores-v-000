@@ -9,12 +9,13 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get "/auth/:provider/callback" => "sessions#create"
   get '/logout' => 'sessions#destroy'
+  get '/overdue' => 'user_chores#show'
 
   resources :sessions
   resources :users
   resources :user_chores
   resources :houses
-  
+
   get 'tasks/create'
 
 

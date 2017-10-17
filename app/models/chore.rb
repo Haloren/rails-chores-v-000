@@ -10,11 +10,5 @@ class Chore < ApplicationRecord
 
   validates :name, :presence => true
 
-  def self.most_tasks
-    self.maximum(Task.count)
-  end
 
-  def self.has_windows?
-    self.joins(:tasks).where("tasks.description = ?", "windows")
-  end
 end
