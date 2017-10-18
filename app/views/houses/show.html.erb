@@ -1,0 +1,11 @@
+<h1><%= @house.name %></h1>
+
+<div class="">
+  <h3>Welcome to the home page for <%=@house.name %> </h3>
+</div>
+
+<div class="">
+  <% @house.users.each do |house_user| %>
+  <p><%= link_to house_user.name, user_path(house_user) %></p>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<h1>All the Clean Houses:</h1>
+<div class="">
+<% @houses.each do |house| %>
+
+  <p><%= link_to house.name, house_path(house) %></p>
+<% end %>
+</div>

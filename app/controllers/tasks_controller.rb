@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  include ApplicationHelper
+
   def create
     @chore = Chore.find(params[:chore_id])
     @task = @chore.tasks.build(task_params)

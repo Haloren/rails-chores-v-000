@@ -4,8 +4,9 @@ module ApplicationHelper
   end
 
   def current_user
-    user = User.find(session[:user_id])
-  end
+   return unless session[:user_id]
+   @current_user ||= User.find(session[:user_id])
+ end
 
   def current_user_has_chore?
     user = User.find(session[:user_id])

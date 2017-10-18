@@ -2,15 +2,8 @@ class UserChoresController < ApplicationController
   include ApplicationHelper
 
   def index
-    #if logged_in? && current_user_has_chore?
-      @user_chores = UserChore.all
-    #elsif logged_in?
-    #  @user_chores = UserChore.all
-      #redirect_to chores_path
-    #else
+    @user_chores = UserChore.all
 
-      #redirect_to '/login'
-    #end
   end
 
   def show

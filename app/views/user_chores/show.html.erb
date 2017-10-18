@@ -2,6 +2,6 @@
 <ul>
 <% @overdue_chores.each do |overdue| %>
 
-<li><%= overdue.chore.name %></li>
+  <li><%= overdue.chore.name %> <%= overdue.user.name %></li>
 <% end %>
 </ul>
