@@ -1,14 +1,16 @@
 
+
 <section class="todoapp">
 	<header class="header">
-		<h1><%= @user.name %></h1>
+		<h1><%= @house %>'s Chores: </h1>
 	</header>
 
 	<section class="main">
 		<ul class="todo-list">
+      <% @house_chores.each do |house_chore| %>
       <li>
   			<div class="view">
-  				  <label>users chores and deadlines</label>
+  				  <label><%= house_chore.name %> </label>
   			</div>
       </li>
 

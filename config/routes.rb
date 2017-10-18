@@ -1,22 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :house_chores
-  get 'house/index'
+  devise_for :users
+  root :to => "welcome#home"
 
-  get 'house/show'
 
-  root 'houses#index'
-  
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get "/auth/:provider/callback" => "sessions#create"
-  get '/logout' => 'sessions#destroy'
   get '/overdue' => 'user_chores#show'
 
   resources :sessions
-  resources :users
   resources :user_chores
   resources :houses
+  resources :house_chores
 
   get 'tasks/create'
 
