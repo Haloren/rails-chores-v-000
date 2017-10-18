@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :house_chores
   get 'house/index'
 
   get 'house/show'
 
-  root 'chores#index'
+  root 'houses#index'
+  
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get "/auth/:provider/callback" => "sessions#create"

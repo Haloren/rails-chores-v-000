@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @user_chore = UserChore.find_by(params[:user_id])
+    @user_chore = UserChore.where("user_id = ?", @user.id)
 
   end
 

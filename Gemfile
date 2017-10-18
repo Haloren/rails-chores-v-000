@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+%w[rspec-core rspec-expectations rspec-mocks rspec-rails rspec-support].each do |lib|
+  gem lib, :git => "https://github.com/rspec/#{lib}.git", :branch => 'master'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
@@ -21,8 +25,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'omniauth'
 
 gem "omniauth-github", '1.1.1'
-
-gem 'cancancan', '~> 2.0'
 
 gem "dotenv-rails"
 
@@ -49,6 +51,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  
 end
 
 group :development do
