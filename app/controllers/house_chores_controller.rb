@@ -1,2 +1,3 @@
 class HouseChoresController < ApplicationController
+
 end

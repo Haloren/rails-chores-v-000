@@ -9,5 +9,6 @@ class HouseChore < ApplicationRecord
 
   belongs_to :house
   belongs_to :chore
-  
+
+
 end

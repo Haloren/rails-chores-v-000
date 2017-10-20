@@ -1,15 +1,25 @@
-<h1><%= @house.name %></h1>
+<section class="todoapp">
+	<header class="header">
+		<h1><%= @house.name %></h1>
+		<%= form_for(@chore) do |f| %>
+			<%= f.text_field :name, :class => "new-todo", :placeholder => (@chore.errors.full_messages_for(:name).first || "Create a new chore..." ) %>
+      <%= f.hidden_field :house_id, :value => @house.id %>
+			<%= f.submit :class => "hidden"%>
+		<% end %>
+	</header>
 
-<div class="">
-  <h3>Welcome to the home page for <%=@house.name %> </h3>
-</div>
-
-<div class="">
-  <% @house.users.each do |house_user| %>
-  <p><%= link_to house_user.name, user_path(house_user) %></p>
-  <% end %>
-</div>
-
-<footer>
-  <p><%= link_to "House Chores", chores_path %></p>
-</footer>
+	<section class="main">
+		<ul class="todo-list">
+			<% @house_chores.each do |house_chore| %>
+			<li>
+				<div class="view">
+					<label><%= link_to house_chore.name, house_chore_path(house_chore) %></label>
+					<%= button_to "x", house_chore_path(house_chore), :method => "delete", :class => "destroy" %>
+				</div>
+			</li>
+			<% end %>
+		</ul>
+	</section>
+	<footer class="footer">
+	</footer>
+</section>

@@ -1,3 +1,10 @@
+
+<div class="">
+  <% @house.users.each do |house_user| %>
+    <p><%= link_to house_user.name, user_path(house_user) %></p>
+  <% end %>
+</div>
+
 SessionsController.rb..
 class SessionsController < ApplicationController
   include ApplicationHelper

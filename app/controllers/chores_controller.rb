@@ -16,11 +16,11 @@ class ChoresController < ApplicationController
   end
 
   def create
-
     @chore = Chore.new(chore_params)
+    @house = House.find(params[:id])
     if @chore.save
 
-      redirect_to chore_url(@chore)
+      redirect_to house_path(@house)
     else
       # @chores = Chore.all
       render :index
