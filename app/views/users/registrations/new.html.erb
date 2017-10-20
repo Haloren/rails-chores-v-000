@@ -1,6 +1,6 @@
 <h2>SIGN UP</h2>
 <% resource.house || resource.build_house %>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= form_for(@user, url: user_registration_path) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
     <%= f.label :email %><br />
