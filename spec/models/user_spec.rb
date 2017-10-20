@@ -29,10 +29,10 @@ RSpec.describe User, type: :model do
       expect(@user.errors[:password]).to include("can't be blank")
     end
 
-    it "is invalid without a house_id" do
-      @user.house_id = nil
+    it "is invalid without a house" do
+      @user.house = nil
       @user.valid?
-      expect(@user.errors[:house_id]).to include("can't be blank")
+      expect(@user.errors[:house]).to include("can't be blank")
     end
   end
 
