@@ -2,7 +2,7 @@ class HousesController < ApplicationController
   include ApplicationHelper
 
   def new
-
+    
   end
 
   def index

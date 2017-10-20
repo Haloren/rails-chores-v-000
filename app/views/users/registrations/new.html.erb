@@ -1,5 +1,5 @@
 <h2>SIGN UP</h2>
-<% resource.house || resource.build_house %>
+<% @user.build_house if !@user.house %>
 <%= form_for(@user, url: user_registration_path) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
@@ -30,10 +30,6 @@
             <%= house_builder.text_field :name %>
           </p>
 
-          <p>
-            <%= house_builder.label :city %>
-            <%= house_builder.text_field :city %>
-          </p>
       </fieldset>
       <% end %>
     </div>

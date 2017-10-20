@@ -11,9 +11,7 @@ class User < ApplicationRecord
 
 
    def house_attributes=(house_attributes)
-     self.house = House.where(:name => house_attributes[:name]).first_or_create do |h|
-       h.city = house_attributes[:city]
-     end
+     self.house = House.where(:name => house_attributes[:name]).first_or_create
    end
 
 
