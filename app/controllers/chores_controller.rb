@@ -14,25 +14,26 @@ class ChoresController < ApplicationController
   end
 
   def create
-    @chore = Chore.new
-    @chore.name = params[:chore][:name]
-    @chore.save
+    @chore = Chore.new(chore_params)
+    if @chore.save
 
-    redirect_to chore_path(@chore)
-
+      redirect_to chore_path(@chore)
+    else
+      render :new
+    end
   end
 
-  # def destroy
-  #   @chore = Chore.find(params[:id])
-  #   @chore.destroy
-  #
-  #   redirect_to chore_url(@chore)
-  # end
+  def destroy
+    @chore = Chore.find(params[:id])
+    @chore.destroy
 
-  # private
-  #
-  # def chore_params
-  #   params.require(:chore).permit(:name)
-  # end
+    redirect_to chores_path
+  end
+
+  private
+
+  def chore_params
+    params.require(:chore).permit(:name, :house_id)
+  end
 
 end
