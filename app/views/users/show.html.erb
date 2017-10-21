@@ -6,11 +6,13 @@
 
 	<section class="main">
 		<ul class="todo-list">
+			<% @user.user_chores.each do |user_chore| %>
       <li>
   			<div class="view">
-  				  <label>users chores and deadlines</label>
+  				  <label><%= user_chore.chore.name %> <%= user_chore.due_date %></label>
   			</div>
       </li>
+			<% end %>
 			<li>
 				<div class="view">
 						<label><%= link_to @user.house.name, house_path(@user.house) %></label>
