@@ -11,4 +11,7 @@ class User < ApplicationRecord
       h.city = house_attributes[:city]
     end
   end
+
+  scope :housemate, -> (house_id){ where house_id: house_id }
+
 end

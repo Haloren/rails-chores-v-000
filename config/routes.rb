@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   get '/sign_up' => 'users#new'
   get '/login'   => 'sessions#new'
-  get '/logout'  => 'sessions#destroy'
+  post '/login'   => 'sessions#create'
+  delete '/logout'  => 'sessions#destroy'
   get '/overdue' => 'user_chores#show'
 
   resources :users

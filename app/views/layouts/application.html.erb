@@ -16,7 +16,7 @@
           <p class="top-navbar">Logged in as: <%= current_user.email %></p>
           <%= link_to "Chore List", chores_path %>
           <%= link_to "Current Chore Cycle", user_chores_path %>
-          <%= link_to "Sign Out", logout_path, :method => 'delete' %>
+          <%= link_to 'Logout', logout_path, :method => :delete %>
         <% else %>
           <%= link_to "Sign In", login_path %>
           <%= link_to "Sign Up", new_user_path %>
