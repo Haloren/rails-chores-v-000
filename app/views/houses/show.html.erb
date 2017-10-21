@@ -1,22 +1,24 @@
 <section class="todoapp">
 	<header class="header">
 		<h1><%= @house.name %></h1>
-		<%= form_for(@chore) do |f| %>
-			<%= f.text_field :name, :class => "new-todo", :placeholder => (@chore.errors.full_messages_for(:name).first || "Create a new chore..." ) %>
+		<%= form_for(@house_chore) do |f| %>
+			<%= f.collection_select :chore_id, Chore.all, :id, :name %>
       <%= f.hidden_field :house_id, :value => @house.id %>
-			<%= f.submit :class => "hidden"%>
+			<%= f.submit "Select Chore", :class => "submit" %>
 		<% end %>
 	</header>
 
 	<section class="main">
 		<ul class="todo-list">
-			<% @house_chores.each do |house_chore| %>
-			<li>
-				<div class="view">
-					<label><%= link_to house_chore.name, house_chore_path(house_chore) %></label>
-					<%= button_to "x", house_chore_path(house_chore), :method => "delete", :class => "destroy" %>
-				</div>
-			</li>
+			<% if @house_chore %>
+				<% @house_chores.each do |house_chore| %>
+				<li>
+					<div class="view">
+						<label><%= house_chore.name %></label>
+
+					</div>
+				</li>
+				<% end %>
 			<% end %>
 		</ul>
 	</section>

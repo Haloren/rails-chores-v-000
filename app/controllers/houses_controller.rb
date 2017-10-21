@@ -12,8 +12,8 @@ class HousesController < ApplicationController
   def show
     @house = House.find(params[:id])
     @users = User.housemate(current_user)
-    @chore = Chore.new
-    @house_chores = @house.chores
+    @house_chore = HouseChore.new
+    @house_chores = HouseChore.all
   end
 
 
