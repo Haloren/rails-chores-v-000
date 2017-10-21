@@ -11,7 +11,7 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
-    @users = User.where(params[:house_id] == @house.id)
+    @users = User.housemate(current_user)
     @chore = Chore.new
     @house_chores = @house.chores
   end
