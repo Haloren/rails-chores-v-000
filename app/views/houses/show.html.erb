@@ -21,5 +21,8 @@
 		</ul>
 	</section>
 	<footer class="footer">
+		<% @users.each do |user| %>
+		<%= user.email %>
+		<% end %>
 	</footer>
 </section>

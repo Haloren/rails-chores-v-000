@@ -30,7 +30,6 @@ gem "dotenv-rails"
 
 gem 'record_tag_helper', '~> 1.0'
 
-gem 'devise'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations" }
 
-  #devise_for :users
+
   root :to => "welcome#home"
 
-
+  get '/sign_up' => 'users#new'
+  get '/login'   => 'sessions#new'
+  get '/logout'  => 'sessions#destroy'
   get '/overdue' => 'user_chores#show'
 
-  resources :sessions
+  resources :users
   resources :user_chores
   resources :houses
   resources :house_chores
