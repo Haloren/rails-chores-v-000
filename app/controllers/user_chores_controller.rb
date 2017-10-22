@@ -44,7 +44,7 @@ class UserChoresController < ApplicationController
 
   private
     def user_chore_params
-      params.require(:user_chore).permit(:house_chore_id, :user_id, :due_date)
+      params.require(:user_chore).permit(:house_chore_id, :user_id, :due_date, :status)
     end
 
 end

@@ -9,13 +9,16 @@
 			<% @user.user_chores.each do |user_chore| %>
       <li>
   			<div class="view">
+					<%= form_for(user_chore) do |f| %>
+						<%= f.check_box :status, :class => "toggle", :checked => user_chore.complete? %>
+					<% end %>
   				  <label><%= user_chore.house_chore.chore.name %> <%= user_chore.due_date %></label>
   			</div>
       </li>
 			<% end %>
 			<li>
 				<div class="view">
-						<label><%= link_to @user.house.name, house_path(@user.house) %></label>
+						<label><%= @user.username %> 's house: <%= link_to @user.house.name, house_path(@user.house) %></label>
 				</div>
 			</li>
 

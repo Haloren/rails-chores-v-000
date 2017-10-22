@@ -4,7 +4,7 @@
       <%= f.check_box :status, :class => "toggle", :checked => user_chore.complete? %>
     <% end %>
 
-    <h5> <%= user_chore.house_chore.chore.name %> => <%= user_chore.user.username %>  due: <%= user_chore.due_date %> </h5>
+    <label> <%= user_chore.house_chore.chore.name %> => <%= user_chore.user.username %>  due: <%= user_chore.due_date %> </label>
 
 
 
