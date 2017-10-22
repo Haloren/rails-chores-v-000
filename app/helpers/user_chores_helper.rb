@@ -8,4 +8,8 @@ module UserChoresHelper
       yield
     end
   end
+
+  def user_chore_name
+    user_chore.house_chore.chore.name
+  end
 end

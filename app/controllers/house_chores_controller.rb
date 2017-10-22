@@ -7,13 +7,22 @@ class HouseChoresController < ApplicationController
 
       redirect_to house_path(current_user.house)
     else
+
       render 'houses/show'
     end
+  end
+
+  def show
+    @house_chore = HouseChore.find(params[:id])
+    @task = @house_chore.tasks.build
+    @user_chore = UserChore.new
+    @users = User.all
+
   end
 
   private
 
     def house_chore_params
-      params.require(:house_chore).permit(:name, :house_id, :chore_id)
+      params.require(:house_chore).permit(:house_id, :chore_id)
     end
 end

@@ -7,25 +7,24 @@ class UserChoresController < ApplicationController
   end
 
   def show
-    #byebug
     @overdue_chores = UserChore.overdue
-
   end
 
   def new
     @user_chore = UserChore.new
-
   end
 
   def create
-    @user = User.find_by(params[:user_id])
-    @chore = Chore.find_by(params[:chore_id])
+    @user = User.find_by(params[:id])
+    @house_chore = HouseChore.find_by(params[:id])
     @user_chore = UserChore.new(user_chore_params)
+    #raise params.inspect
     if @user_chore.save
+
       redirect_to user_chores_path
     else
 
-      render :'chores/show'
+      render :'house_chores/show'
     end
   end
 
@@ -45,7 +44,7 @@ class UserChoresController < ApplicationController
 
   private
     def user_chore_params
-      params.require(:user_chore).permit(:chore_id, :user_id, :status, :due_date)
+      params.require(:user_chore).permit(:house_chore_id, :user_id, :due_date)
     end
 
 end

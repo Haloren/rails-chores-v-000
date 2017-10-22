@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021010903) do
+ActiveRecord::Schema.define(version: 20171021233411) do
 
   create_table "chores", force: :cascade do |t|
     t.string "name"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20171021010903) do
   end
 
   create_table "house_chores", force: :cascade do |t|
-    t.string "name"
     t.integer "house_id"
     t.integer "chore_id"
     t.datetime "created_at", null: false
@@ -35,17 +34,17 @@ ActiveRecord::Schema.define(version: 20171021010903) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "description"
-    t.integer "chore_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "house_chore_id"
   end
 
   create_table "user_chores", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "chore_id"
     t.integer "status", default: 0
     t.date "due_date"
-    t.index ["chore_id"], name: "index_user_chores_on_chore_id"
+    t.integer "house_chore_id"
+    t.integer "chore_id"
     t.index ["user_id"], name: "index_user_chores_on_user_id"
   end
 

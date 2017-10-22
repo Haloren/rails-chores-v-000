@@ -14,7 +14,7 @@
 				<% @house_chores.each do |house_chore| %>
 				<li>
 					<div class="view">
-						<label><%= house_chore.name %></label>
+						<label><%= link_to house_chore.chore.name, house_chore_path(house_chore) %></label>
 
 					</div>
 				</li>

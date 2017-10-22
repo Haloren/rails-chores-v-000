@@ -1,18 +1,29 @@
-
-
 <section class="todoapp">
 	<header class="header">
-		<h1><%= @house %>'s Chores: </h1>
+		<h1><%= @house_chore.chore.name %></h1>
+		<%= form_for([@house_chore, @task]) do |f| %>
+		<%= f.text_field :description, :class => "new-todo", :placeholder => (@task.errors.full_messages_for(:description).first || "Create a new chore task..." ) %>
+		<%= f.submit :class => "hidden" %>
+		<% end %>
 	</header>
 
 	<section class="main">
 		<ul class="todo-list">
-      <% @house_chores.each do |house_chore| %>
-      <li>
-  			<div class="view">
-  				  <label><%= house_chore.name %> </label>
-  			</div>
-      </li>
+			<% @house_chore.tasks.each do |task| %>
+			<li>
+				<div class="view">
+					<label><%= task.description %></label>
+				</div>
+			</li>
+			<% end %>
+			<%= form_for(@user_chore) do |f| %>
+			  <%= f.hidden_field :house_chore_id, :value => @house_chore.id %>
+			  <%= f.label :user %>
+			  <%= f.collection_select :user_id, @users, :id, :username %>
+			  <%= f.label :due_date %>
+			  <%= f.date_select :due_date %>
+			  <%= f.submit "Assign a user to a chore" %>
+			<% end %>
 
 		</ul>
 

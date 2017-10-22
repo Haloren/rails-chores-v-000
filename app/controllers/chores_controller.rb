@@ -8,16 +8,13 @@ class ChoresController < ApplicationController
 
   def show
     @chore = Chore.find(params[:id])
-    @task = @chore.tasks.build
-    @user_chore = UserChore.new
-    @users = User.housemate(current_user)
   end
 
   def create
     @chore = Chore.new(chore_params)
     if @chore.save
 
-      redirect_to chore_path(@chore)
+      redirect_to chores_path
     else
       render :new
     end

@@ -5,6 +5,6 @@ class Task < ApplicationRecord
   # t.datetime "created_at", null: false
   # t.datetime "updated_at", null: false
 
-  belongs_to :chore
+  belongs_to :house_chore
   validates :description, :presence => true
 end

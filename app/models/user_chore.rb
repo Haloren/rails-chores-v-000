@@ -7,8 +7,9 @@ class UserChore < ApplicationRecord
   # t.index ["chore_id"], name: "index_user_chores_on_chore_id"
   # t.index ["user_id"], name: "index_user_chores_on_user_id"
 
-  belongs_to :chore
+  belongs_to :house_chore
   belongs_to :user
+  belongs_to :chore, optional: true
 
 
   STATUS = {

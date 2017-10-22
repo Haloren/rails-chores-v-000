@@ -9,7 +9,7 @@
 			<% @user.user_chores.each do |user_chore| %>
       <li>
   			<div class="view">
-  				  <label><%= user_chore.chore.name %> <%= user_chore.due_date %></label>
+  				  <label><%= user_chore.house_chore.chore.name %> <%= user_chore.due_date %></label>
   			</div>
       </li>
 			<% end %>
