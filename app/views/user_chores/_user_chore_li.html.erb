@@ -5,8 +5,6 @@
     <% end %>
 
     <label> <%= user_chore.house_chore.chore.name %> => <%= user_chore.user.username %>  due: <%= user_chore.due_date %> </label>
-
-
-
+    <%= button_to "x", user_chore_path(user_chore), method: :delete, :class => "destroy" %>
   </div>
 <% end %>

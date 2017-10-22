@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :houses
   resources :chores
 
-  get 'tasks/create'
+  # get 'tasks/create'
 
 
   resources :house_chores do
