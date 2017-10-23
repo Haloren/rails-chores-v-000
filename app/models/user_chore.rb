@@ -11,6 +11,10 @@ class UserChore < ApplicationRecord
   belongs_to :user
   belongs_to :chore, optional: true
 
+  validates :house_chore, :presemce => true
+  validates :user, :presemce => true
+
+
 
   STATUS = {
     :incomplete => 0,

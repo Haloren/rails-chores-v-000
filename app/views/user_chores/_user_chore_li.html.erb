@@ -1,9 +1,10 @@
 <%= li_for_user_chore(user_chore) do %>
   <div class="view">
-    <%= form_for(user_chore) do |f| %>
-      <%= f.check_box :status, :class => "toggle", :checked => user_chore.complete? %>
+    <% if can? :update, user_chore %>
+      <%= form_for(user_chore) do |f| %>
+        <%= f.check_box :status, :class => "toggle", :checked => user_chore.complete? %>
+      <% end %>
     <% end %>
-
     <label> <%= user_chore.house_chore.chore.name %> => <%= user_chore.user.username %>  due: <%= user_chore.due_date %> </label>
     <%= button_to "x", user_chore_path(user_chore), method: :delete, :class => "destroy" %>
   </div>

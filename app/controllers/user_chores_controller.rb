@@ -1,5 +1,6 @@
 class UserChoresController < ApplicationController
   include ApplicationHelper
+  load_and_authorize_resource
 
   def index
     @user_chores = UserChore.all

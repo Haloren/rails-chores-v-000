@@ -20,17 +20,16 @@ gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+# use Omniaauth for all OAuth strategies
 gem 'omniauth'
-
+# use for OAuth strategy with GitHub
 gem "omniauth-github", '1.1.1'
-
+# Use DotEnv to store secret key for OAuth
 gem "dotenv-rails"
 
 gem 'record_tag_helper', '~> 1.0'
-
-
+# Use CanCanCan for managing authorizations
+gem 'cancancan', '~> 2.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
