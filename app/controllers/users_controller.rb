@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
       redirect_to user_path(@user)
     else
+      flash[:notice] = "Sugn up failed."
       render :new
     end
   end

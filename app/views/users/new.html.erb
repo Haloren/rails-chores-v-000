@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
 <h3>Sign Up</h3>
 
 <div class="">
@@ -8,15 +12,15 @@
   </p>
   <p>
     <%= f.label :email %></br>
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :required => true %>
   </p>
   <p>
     <%= f.label :password %></br>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, :required => true %>
   </p>
   <p>
     <%= f.label :password_confirmation %></br>
-    <%= f.password_field :password_field %>
+    <%= f.password_field :password_field, :required => true %>
   </p>
   <p>
     <%= f.label :admin %>
@@ -28,7 +32,7 @@
     <legend>House Name: </legend>
     <p>
       <%= house_builder.label :name %>
-      <%= house_builder.text_field :name %>
+      <%= house_builder.text_field :name, :required => true %>
     </p>
     <p>
       <%= house_builder.label :city %>

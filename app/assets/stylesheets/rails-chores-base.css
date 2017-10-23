@@ -41,6 +41,11 @@ input[type="checkbox"] {
 	outline: none;
 }
 
+.notice {
+	color: red;
+	font-size: 32px
+}
+
 .hidden {
 	display: none;
 }
