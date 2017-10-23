@@ -1,7 +1,44 @@
+
+<% if current_user.house_id == nil %>
+<div class="">
+  <p style="color: red;">
+    Thanks for signing in through GitHub! Before you continue to use this app,
+    please select the house that you are associated with from the list below:
+    (You should only have to do this once.)  If you do not see your house on the list, or you are
+    creating an account for your house for the first time, please add your house to the list by filling out the form below.
+  </p>
+</div>
+<div class="">
+  <%= form_for @user do |f| %>
+    <p>
+      <%= f.select :house_id, House.all.collect { |h|  h.name }, include_blank: true %>
+      <%= f.submit %>
+    </p>
+  <% end %>
+
+  <%= form_for @user do |f| %>
+    <%= f.fields_for :house do |house_builder| %>
+    <fieldset>
+      <legend>House Name: </legend>
+      <p>
+        <%= house_builder.label :name %>
+        <%= house_builder.text_field :name %>
+      </p>
+      <p>
+        <%= house_builder.label :city %>
+        <%= house_builder.text_field :city %>
+      </p>
+    </fieldset>
+    <% end %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+</div>
+
 <h1>All the Clean Houses:</h1>
 <div class="">
-<% @houses.each do |house| %>
+  <% @houses.each do |house| %>
 
-  <p><%= link_to house.name, house_path(house) %></p>
-<% end %>
+    <p><%= link_to house.name, house_path(house) %></p>
+  <% end %>
 </div>

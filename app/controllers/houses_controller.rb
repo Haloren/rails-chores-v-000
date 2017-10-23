@@ -7,6 +7,7 @@ class HousesController < ApplicationController
 
   def index
     @houses = House.all
+    @user = current_user
   end
 
   def show
