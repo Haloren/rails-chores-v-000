@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_house
-    current_user.house_id
+    House.where("id == ?", current_user.house_id)
   end
 
   rescue_from CanCan::AccessDenied do |exception|

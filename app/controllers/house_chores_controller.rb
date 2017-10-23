@@ -13,11 +13,11 @@ class HouseChoresController < ApplicationController
   end
 
   def show
+    @house = House.find_by(:id => params[:id])
     @house_chore = HouseChore.find(params[:id])
     @task = @house_chore.tasks.build
     @user_chore = UserChore.new
-    @users = User.all
-
+    @users = @house.users
   end
 
   private
