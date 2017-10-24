@@ -1,11 +1,13 @@
 <section class="todoapp">
 	<header class="header">
 		<h1><%= @house.name %></h1>
-		<%= form_for(@house_chore) do |f| %>
-			<%= f.collection_select :chore_id, Chore.all, :id, :name %>
-      <%= f.hidden_field :house_id, :value => @house.id %>
-			<%= f.submit "Select Chore", :class => "submit" %>
-		<% end %>
+
+			<%= form_for(@house_chore) do |f| %>
+				<%= f.collection_select :chore_id, Chore.all, :id, :name %>
+	      <%= f.hidden_field :house_id, :value => @house.id %>
+				<%= f.submit "Select Chore", :class => "submit" %>
+			<% end %>
+		
 	</header>
 
 	<section class="main">
@@ -15,7 +17,7 @@
 				<li>
 					<div class="view">
 						<label><%= link_to house_chore.chore.name, house_chore_path(house_chore) %></label>
-
+						<%= button_to "x", house_chore_path(house_chore), method: :delete, :class => "destroy" %>
 					</div>
 				</li>
 				<% end %>
