@@ -3,7 +3,15 @@ actual Notes
 1. Admin access only to adding chores to the house list?
     Have some kind of message on House#show about adding chores to the list.
 
-2.
+2. Need a partial for the form in users#new view
+
+3. Houses#show needs some attention.  Delete function and scoping of the chores that are returned.
+
+
+
+
+
+
 
 
 
