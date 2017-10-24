@@ -12,15 +12,15 @@
   </p>
   <p>
     <%= f.label :email %></br>
-    <%= f.text_field :email, :required => true %>
+    <%= f.text_field :email %>
   </p>
   <p>
     <%= f.label :password %></br>
-    <%= f.password_field :password, :required => true %>
+    <%= f.password_field :password %>
   </p>
   <p>
     <%= f.label :password_confirmation %></br>
-    <%= f.password_field :password_field, :required => true %>
+    <%= f.password_field :password_field %>
   </p>
   <p>
     <%= f.label :admin %>
@@ -32,7 +32,7 @@
     <legend>House Name: </legend>
     <p>
       <%= house_builder.label :name %>
-      <%= house_builder.text_field :name, :required => true %>
+      <%= house_builder.text_field :name %>
     </p>
     <p>
       <%= house_builder.label :city %>

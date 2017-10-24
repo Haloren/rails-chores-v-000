@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :chores, through: :user_chores
 
   validates :email, :presence => true
-  validates :email, :uniqueness => true
+  # validates :email, :uniqueness => true
   # validates :password, :presence => true
   # validates_length_of :password, :minimum => 6, :maximum => 24
 
