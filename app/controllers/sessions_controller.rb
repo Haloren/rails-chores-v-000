@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
         redirect_to houses_path
       else
-        flash[:notice] = 'Invalid email/password combination'
+        # flash[:notice] = 'Invalid email/password combination'
         render 'new'
       end
     end

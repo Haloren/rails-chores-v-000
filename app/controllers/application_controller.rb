@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
     current_user != nil
   end
 
+  def authorize
+    redirect_to '/login' unless current_user
+  end
+
   def current_house
     House.where("id == ?", current_user.house_id)
   end

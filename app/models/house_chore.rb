@@ -13,8 +13,8 @@ class HouseChore < ApplicationRecord
   has_many :user_chores
   has_many :users, through: :user_chores
 
-  validates :house, :presence => true
-  validates :chore, :presence => true
+  # validates :house, :presence => true
+  # validates :chore, :presence => true
 
   scope :user_house, ->  (house_id){ where house_id: house_id }
 end

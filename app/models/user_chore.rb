@@ -11,8 +11,8 @@ class UserChore < ApplicationRecord
   belongs_to :user
   belongs_to :chore, optional: true
 
-  validates :house_chore, :presence => true
-  validates :user, :presence => true
+  # validates :house_chore, :presence => true
+  # validates :user, :presence => true
 
 
 

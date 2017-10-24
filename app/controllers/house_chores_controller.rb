@@ -1,4 +1,6 @@
 class HouseChoresController < ApplicationController
+  before_action :authorize
+
   def create
     @house = House.find_by(id: params[:id])
     @chore = Chore.find_by(id: params[:id])

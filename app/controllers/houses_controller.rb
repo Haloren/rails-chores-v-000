@@ -1,5 +1,6 @@
 class HousesController < ApplicationController
   include ApplicationHelper
+  before_action :authorize
 
   def new
 

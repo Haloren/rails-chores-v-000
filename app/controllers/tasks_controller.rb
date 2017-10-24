@@ -1,13 +1,16 @@
 class TasksController < ApplicationController
   include ApplicationHelper
+  before_action :authorize
 
   def create
     @house_chore = HouseChore.find_by(params[:id])
     @task = @house_chore.tasks.build(task_params)
 
     if @task.save
+
       redirect_to house_chore_path(@house_chore)
     else
+      flash[:notice] = "Task not saved"
 
       render "house_chores/show"
     end

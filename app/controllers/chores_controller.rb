@@ -1,5 +1,6 @@
 class ChoresController < ApplicationController
   include ApplicationHelper
+  before_action :authorize
 
   def index
     @chore = Chore.new

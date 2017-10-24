@@ -8,8 +8,8 @@ class User < ApplicationRecord
 
   validates :email, :presence => true
   validates :email, :uniqueness => true
-  validates :password, :presence => true
-  validates_length_of :password, :minimum => 6, :maximum => 24
+  # validates :password, :presence => true
+  # validates_length_of :password, :minimum => 6, :maximum => 24
 
   def self.find_or_create_by_omniauth(auth_hash)
     self.where(:email => auth_hash["info"]["email"]).first_or_create do |user|
