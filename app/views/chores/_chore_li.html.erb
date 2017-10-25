@@ -1,7 +1,7 @@
 <% @chores.each do |chore| %>
 <li>
   <div class="view">
-    <label><%= link_to chore.name, chore_path(chore) %></label>
+    <label><%= chore.name %></label>
     <%= button_to "x", chore_path(chore), method: :delete, :class => "destroy" %>
   </div>
 </li>

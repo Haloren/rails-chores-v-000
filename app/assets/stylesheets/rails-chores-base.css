@@ -21,6 +21,12 @@ button {
 	font-smoothing: antialiased;
 }
 
+.oauth {
+    border: 1px solid #00BCE1;
+    background: transparent;
+    color: #00BCE1;
+}
+
 body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
