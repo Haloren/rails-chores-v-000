@@ -5,7 +5,7 @@ class UserChoresController < ApplicationController
 
   def index
     @user_chores = UserChore.all
-
+    @user_chore = UserChore.find_by(params[:user_chore_id])
   end
 
   def show
@@ -20,9 +20,9 @@ class UserChoresController < ApplicationController
     @user = User.find_by(params[:id])
     @house_chore = HouseChore.find_by(params[:id])
     @user_chore = UserChore.new(user_chore_params)
-    #raise params.inspect
-    if @user_chore.save
 
+    if @user_chore.save
+      # raise params.inspect
       redirect_to user_chores_path
     else
 

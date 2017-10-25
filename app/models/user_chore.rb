@@ -8,8 +8,8 @@ class UserChore < ApplicationRecord
   # t.index ["user_id"], name: "index_user_chores_on_user_id"
 
   belongs_to :house_chore
-  belongs_to :user
-  belongs_to :chore, optional: true
+  belongs_to :user, optional: true
+
 
   # validates :house_chore, :presence => true
   # validates :user, :presence => true
@@ -28,10 +28,6 @@ class UserChore < ApplicationRecord
   def incomplete?
     self.status == STATUS[:incomplete]
   end
-
-  # def self.users_chore
-  #   where(self.user_id = user.id)
-  # end
 
   scope :overdue, -> { where "due_date <= ?", Date.today }
 

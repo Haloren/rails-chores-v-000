@@ -7,7 +7,9 @@
 		<input class="toggle-all" type="checkbox">
 		<label for="toggle-all">Mark all as complete</label>
 		<ul class="todo-list">
-			<%= render :collection => @user_chores, :partial => "user_chores/user_chore_li", :as => :user_chore %>
+			<% @user_chores.each do |user_chore| %>
+				<%= render :partial => "user_chores/user_chore_li", :locals => { :user_chore => user_chore } %>
+			<% end %>
 		</ul>
 	</section>
 
