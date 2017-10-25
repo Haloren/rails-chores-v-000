@@ -10,17 +10,20 @@
   </head>
 
   <body>
-    <div class="top-navbar">
-      <a href="<%= root_url %>"/>Home</a>
-       <% if logged_in? %>
-          <p class="top-navbar">Logged in as: <%=link_to current_user.email, user_path(current_user) %></p>
-          <%= link_to "Chore List", chores_path %>
-          <%= link_to "Current Chore Cycle", user_chores_path %>
-          <%= link_to 'Logout', logout_path, :method => :delete %>
+    <div class="nav">
+      <ul>
+          <li><%= link_to "Home", root_path %></li>
+         <% if logged_in? %>
+          <p class="nav">Logged in as: <%=link_to current_user.email, user_path(current_user) %></p>
+          <li><%= link_to "Chore List", chores_path %></li>
+          <li><%= link_to "Current Chore Cycle", user_chores_path %></li>
+          <li><%= link_to 'Logout', logout_path, :method => :delete %></li>
         <% else %>
-          <%= link_to "Sign In", login_path %>
-          <%= link_to "Sign Up", new_user_path %>
+          <li><%= link_to "Sign In", login_path %></li>
+          <li><%= link_to "Sign Up", new_user_path %></li>
         <% end %>
+      </ul>
+
     </div>
   <div class="container"  role="main">
 

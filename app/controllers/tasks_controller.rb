@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   include ApplicationHelper
-  # before_action :authorize
+  before_action :authorize
 
   def create
     @house_chore = HouseChore.find(params[:house_chore_id])

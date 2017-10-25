@@ -1,5 +1,6 @@
 class UserChoresController < ApplicationController
   include ApplicationHelper
+  before_action :authorize
   load_and_authorize_resource
 
   def index
@@ -21,7 +22,7 @@ class UserChoresController < ApplicationController
     @user_chore = UserChore.new(user_chore_params)
 
     if @user_chore.save
-      # raise params.inspect
+      #raise params.inspect
       redirect_to user_chores_path
     else
 
