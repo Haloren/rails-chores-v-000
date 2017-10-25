@@ -3,7 +3,6 @@ class Ability
 
   def initialize(user)
      can :read, UserChore
-     can :create, UserChore
      unless user.nil? # guest
        # CanCan accepts a hash of conditions;
        # here, we're saying that the Post's user_id

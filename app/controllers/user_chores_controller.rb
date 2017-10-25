@@ -1,6 +1,5 @@
 class UserChoresController < ApplicationController
   include ApplicationHelper
-  # before_action :authorize
   load_and_authorize_resource
 
   def index
@@ -33,6 +32,7 @@ class UserChoresController < ApplicationController
   def update
     @user_chore = UserChore.find(params[:id])
     @user_chore.update(user_chore_params)
+    authorize! :update, @user_chore
 
     redirect_to user_chores_path
   end
