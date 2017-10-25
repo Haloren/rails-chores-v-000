@@ -13,7 +13,6 @@
 
 	<section class="main">
 		<ul class="todo-list">
-			<%= render :collection => @house_chores, :partial => "house_chores/house_chore_li", :as => :house_chore %>
       <% @house_chore.tasks.each do |task| %>
       <li>
         <div class="view">
@@ -22,7 +21,7 @@
         </div>
       </li>
       <% end %>
-			<%= render partial: "house_chores/house_chores_form", locals: { user_chore: @user_chore, house_chore: @house_chore, users: @users } %>
+      <%= render :partial => "house_chores/house_chores_form", :locals => { :house_chore => @house_chore, :user_chore => @user_chore, :users => @users } %>
 		</ul>
 
 	</section>

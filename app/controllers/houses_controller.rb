@@ -13,7 +13,6 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
-    @users = User.housemate(current_user)
     @house_chore = HouseChore.new
     @house_chores = HouseChore.all
   end

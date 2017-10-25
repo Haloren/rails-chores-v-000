@@ -11,20 +11,18 @@
 	<section class="main">
 		<ul class="todo-list">
 			<% if @house_chore %>
-				<% @house_chores.each do |house_chore| %>
-				<li>
-					<div class="view">
-						<label><%= link_to house_chore.chore.name, house_chore_path(house_chore) %></label>
-						<%= button_to "x", house_chore_path(house_chore), method: :delete, :class => "destroy" %>
-					</div>
-				</li>
-				<% end %>
+			  <% @house_chores.each do |house_chore| %>
+			  <li>
+			    <div class="view">
+			      <label><%= link_to house_chore.chore.name, house_chore_path(house_chore) %></label>
+			      <%= button_to "x", house_chore_path(house_chore), method: :delete, :class => "destroy" %>
+			    </div>
+			  </li>
+			  <% end %>
 			<% end %>
 		</ul>
 	</section>
 	<footer class="footer">
-		<% @users.each do |user| %>
-		<%= user.email %>
-		<% end %>
+
 	</footer>
 </section>

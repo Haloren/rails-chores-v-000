@@ -23,6 +23,7 @@ class User < ApplicationRecord
     end
   end
 
-  scope :housemate, -> (house_id){ where house_id: house_id }
-
+  def self.by_house(house_id)
+    where(house: house_id)
+  end
 end
