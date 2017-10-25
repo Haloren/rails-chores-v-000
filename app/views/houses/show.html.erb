@@ -1,13 +1,11 @@
 <section class="todoapp">
 	<header class="header">
 		<h1><%= @house.name %></h1>
-
 			<%= form_for(@house_chore) do |f| %>
 				<%= f.collection_select :chore_id, Chore.all, :id, :name %>
 	      <%= f.hidden_field :house_id, :value => @house.id %>
 				<%= f.submit "Select Chore", :class => "submit" %>
 			<% end %>
-
 	</header>
 
 	<section class="main">

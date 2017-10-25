@@ -1,6 +1,6 @@
 class UserChoresController < ApplicationController
   include ApplicationHelper
-  before_action :authorize
+  # before_action :authorize
   load_and_authorize_resource
 
   def index

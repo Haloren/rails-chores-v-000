@@ -1,3 +1,5 @@
+<%= render partial: "house_chores/house_chores_form", locals: { user_chore: @user_chore, house_chore: @house_chore, users: @users } %>
+
 actual Notes
 
 1. Admin access only to adding chores to the house list?

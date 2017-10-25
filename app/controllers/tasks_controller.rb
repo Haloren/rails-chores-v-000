@@ -1,23 +1,24 @@
 class TasksController < ApplicationController
   include ApplicationHelper
-  before_action :authorize
+  # before_action :authorize
 
   def create
-    @house_chore = HouseChore.find_by(params[:id])
+    @house_chore = HouseChore.find(params[:house_chore_id])
     @task = @house_chore.tasks.build(task_params)
 
     if @task.save
 
-      redirect_to house_chore_path(@house_chore)
+       redirect_to house_chore_path(@house_chore)
     else
-      flash[:notice] = "Task not saved"
+      raise params.inspect
+      flash[:notice] = "Task was not saved"
 
-      render "house_chores/show"
+      render :'house_chore/show'
     end
   end
 
   def destroy
-    @House_chore = HouseChore.find(params[:house_chore_id])
+    @house_chore = HouseChore.find(params[:house_chore_id])
     @task = Task.find(params[:task_id])
     @task.destroy
 

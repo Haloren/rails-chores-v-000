@@ -14,6 +14,14 @@
 	<section class="main">
 		<ul class="todo-list">
 			<%= render :collection => @house_chores, :partial => "house_chores/house_chore_li", :as => :house_chore %>
+      <% @house_chore.tasks.each do |task| %>
+      <li>
+        <div class="view">
+          <label><%= task.description %></label>
+          <%= button_to "x", house_chore_task_path(task.house_chore, :task_id => task.id), method: :delete, :class => "destroy" %>
+        </div>
+      </li>
+      <% end %>
 			<%= render partial: "house_chores/house_chores_form", locals: { user_chore: @user_chore, house_chore: @house_chore, users: @users } %>
 		</ul>
 
