@@ -1,10 +1,12 @@
 <section class="todoapp">
 	<header class="header">
 		<h1><%= @house.name %></h1>
+		<h2>The cleanest house in <%= @house.city %>!</h2>
 			<%= form_for(@house_chore) do |f| %>
+				<%= f.label :collection_select %>
 				<%= f.collection_select :chore_id, Chore.all, :id, :name %>
 	      <%= f.hidden_field :house_id, :value => @house.id %>
-				<%= f.submit "Select Chore", :class => "submit" %>
+				<%= f.submit "Add Chore to House Chore List", :class => "submit" %>
 			<% end %>
 	</header>
 

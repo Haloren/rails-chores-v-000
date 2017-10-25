@@ -15,8 +15,10 @@
           <li><%= link_to "Home", root_path %></li>
          <% if logged_in? %>
           <p class="nav">Logged in as: <%=link_to current_user.email, user_path(current_user) %></p>
+          <li><%= link_to "#{current_user.house.name}", house_path(current_user.house)%></li>
+          <li><%= link_to "Chore Cycle", user_chores_path %></li>
+          <li><%= link_to "Overdue", overdue_path %></li>
           <li><%= link_to "Chore List", chores_path %></li>
-          <li><%= link_to "Current Chore Cycle", user_chores_path %></li>
           <li><%= link_to 'Logout', logout_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to "Sign In", login_path %></li>

@@ -1,7 +1,21 @@
-<h1>Overdue Chores:</h1>
-<ul>
-<% @overdue_chores.each do |overdue| %>
+<section class="todoapp">
+	<header class="header">
+		<h1> Overdue Chores </h1>
 
-  <li><%= overdue.chore.name %> <%= overdue.user.name %></li>
-<% end %>
-</ul>
+	</header>
+
+	<section class="main">
+		<ul class="todo-list">
+		  <%= @overdue_chores.each do |overdue| %>
+		  <li>
+		    <div class="view">
+		      <label><%= overdue.house_chore.chore.name %> <%= overdue.user.username %></label>
+		    </div>
+		  </li>
+		  <% end %>
+		</ul>
+	</section>
+	<footer class="footer">
+
+	</footer>
+</section>

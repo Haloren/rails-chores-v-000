@@ -3,6 +3,7 @@ class Ability
 
   def initialize(user)
      can :read, UserChore
+     can :read, Chore
      unless user.nil? # guest
        # CanCan accepts a hash of conditions;
        # here, we're saying that the Post's user_id
@@ -11,7 +12,7 @@ class Ability
      end
      if user.admin?
        can :manage, UserChore
-
+       can :manage, Chore
      end
     # Define abilities for the passed in user here. For example:
     #
