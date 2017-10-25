@@ -1,8 +1,8 @@
-<li class="<%= "completed" if user_chore.complete? %>">
+<%= content_tag_for :li, user_chore, :class => li_class_for_user_chore(user_chore) do %>
   <div class="view">
     <%= form_for(user_chore) do |f| %>
-      <%= f.check_box :status, :class => "toggle", :checked => (true if user_chore.complete?)%>
+      <%= f.check_box :status, :class => "toggle", :checked => user_chore.complete? %>
     <% end %>
     <label><%= user_chore.user.username %> <%= user_chore.house_chore.chore.name %> <%= user_chore.due_date %></label>
   </div>
-</li>
+<% end %>
