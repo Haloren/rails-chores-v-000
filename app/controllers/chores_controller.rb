@@ -18,7 +18,7 @@ class ChoresController < ApplicationController
 
       redirect_to chores_path
     else
-      render :new
+      render :index
     end
   end
 

@@ -10,6 +10,13 @@ actual Notes
 
 
 
+idea for user.rb..
+
+self.find_users(house_id)
+self.where(“house_id == ?”, house_id)
+end
+User.find_users(current_user.house_id)
+
 
 
 

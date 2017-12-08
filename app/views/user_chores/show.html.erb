@@ -6,10 +6,10 @@
 
 	<section class="main">
 		<ul class="todo-list">
-		  <%= @overdue_chores.each do |overdue| %>
+		  <% @overdue_chores.each do |overdue| %>
 		  <li>
 		    <div class="view">
-		      <label><%= overdue.house_chore.chore.name %> <%= overdue.user.username %></label>
+		      <label><%= overdue.house_chore.chore.name %> | <%= overdue.user.username %></label>
 		    </div>
 		  </li>
 		  <% end %>

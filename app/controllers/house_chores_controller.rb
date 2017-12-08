@@ -18,7 +18,7 @@ class HouseChoresController < ApplicationController
     @house_chore = HouseChore.find(params[:id])
     @task = @house_chore.tasks.build
     @user_chore = UserChore.new
-    @users = User.where("house_id == ?", current_user.house_id)
+    @users = User.house(current_user.house_id)
   end
 
   def destroy
