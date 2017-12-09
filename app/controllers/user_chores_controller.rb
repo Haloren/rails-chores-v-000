@@ -6,6 +6,8 @@ class UserChoresController < ApplicationController
   def index
     @user_chores = UserChore.all
     @user_chore = UserChore.find_by(params[:user_chore_id])
+
+    render 'user_chores/index', :layout => false
   end
 
   def show
