@@ -1,6 +1,6 @@
 $(function(){
   $("#new_task").on("submit", function(e){
-    const url = this.action;
+    // const url = this.action;
     const authToken = $("input[name='authenticity_token']").val();
     data = {
       'authenticity_token': authToken,
@@ -12,16 +12,17 @@ $(function(){
 
     $.ajax({
       type: "POST",
-      url: url,
+      url: this.action,
       data: data,
       success: function(response) {
+        $('#task_description').val("")
         const $newEl = $(`
           <li>
           <div class="view">
             <label>${response.description}</label>
             <form class="button_to" method="post" action="${response.delete_path}>
               <input type="hidden" name="_method" value="delete">
-              <input class="destroy" type="submit" value="x">
+               <input class="destroy" type="submit" value="x">
               <input type="hidden" name="authenticty_token" value="${authToken}">
             </form>
           </div>
