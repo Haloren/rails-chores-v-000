@@ -21,15 +21,16 @@
         </div>
       </li>
       <% end %>
-      <%= form_for(@user_chore) do |f| %>
-        <%= f.hidden_field :house_chore_id, :value => @house_chore.id %>
-        <%= f.label :user %>
-        <%= f.select :user_id, @users.collect { |u| [u.username, u.id] }, include_blank: true %>
-        <%= f.label :due_date %>
-        <%= f.date_select :due_date %>
-        <%= f.submit "Assign a user to a chore" %>
-      <% end %>
+
 		</ul>
+    <%= form_for(@user_chore) do |f| %>
+      <%= f.hidden_field :house_chore_id, :value => @house_chore.id %>
+      <%= f.label :user %>
+      <%= f.select :user_id, @users.collect { |u| [u.username, u.id] }, include_blank: true %>
+      <%= f.label :due_date %>
+      <%= f.date_select :due_date %>
+      <%= f.submit "Assign a user to a chore" %>
+    <% end %>
 
 	</section>
 

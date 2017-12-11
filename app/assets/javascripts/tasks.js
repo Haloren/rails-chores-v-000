@@ -14,7 +14,7 @@ $(function(){
       url: url,
       data: data,
       success: function(response) {
-        debugger
+        console.log(response);
       }
     });
 
