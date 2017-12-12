@@ -1,3 +1,15 @@
+houses#index.html.erb ...
+
+
+<% @houses.each do |house| %>
+
+  <p><%= link_to house.name, house_path(house) %></p>
+<% end %>
+
+---
+
+
+
 <%= button_to "x", house_chore_task_path(task.house_chore, :task_id => task.id), method: :delete, :class => "destroy" %>
 
 //use this one in house_chores#show:

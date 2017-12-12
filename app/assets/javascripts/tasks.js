@@ -30,7 +30,6 @@ $(function(){
       $('#task_description').val("");
       var task = new Task(json);
       var taskLi = task.renderLI()
-      debugger
 
       $('ul.todo-list').append(taskLi)
     })

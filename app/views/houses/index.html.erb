@@ -35,10 +35,19 @@
 <% end %>
 </div>
 
-<h1>All the Clean Houses:</h1>
-<div class="">
-  <% @houses.each do |house| %>
+<section class="todoapp">
+	<header class="header">
+		<h1>The Houses</h1>
+	</header>
 
-    <p><%= link_to house.name, house_path(house) %></p>
-  <% end %>
-</div>
+	<section class="main">
+		<ul class="todo-list">
+      <% @houses.each do |house| %>
+      <li class="house" id="house_<%= house.id %>">
+        <div class="view">
+          <label><%= link_to house.name, house_path(house) %></label>
+        </div>
+      </li>
+      <% end %>
+
+		</ul>
