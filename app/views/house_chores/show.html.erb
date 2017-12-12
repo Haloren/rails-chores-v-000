@@ -17,11 +17,7 @@
       <li class="task" id="task_<%= task.id %>">
         <div class="view">
           <label><%= task.description %></label>
-          <form action="<%= house_chore_path(task.house_chore, task) %>" method="POST">
-            <input type="hidden" name="_method" value="DELETE" />
-            <button type="submit" class="destroy"></button>
-          </form>
-          <%= button_to "x", house_chore_task_path(task.house_chore, :task_id => task.id), method: :delete, :class => "destroy" %>
+          <%= button_to "x", [@house_chore, task], :method => :delete, :class => "destroy" %>
         </div>
       </li>
       <% end %>
@@ -42,3 +38,16 @@
 
 	</footer>
 </section>
+
+<script id="task-template" type="text/x-handlebars-template">
+  <li class="task" id="task_{{id}}">
+    <div class="view">
+      <label>{{description}}</label>
+      <form class="button_to" method="post" action="/house_chores/<%= @house_chore.id %>/tasks/{{id}}">
+        <input type="hidden" name="_method" value="delete">
+        <input class="destroy" type="submit" value="x">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      </form>
+    </div>
+  </li>
+</script>
