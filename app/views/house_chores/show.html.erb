@@ -17,10 +17,12 @@
       <li>
         <div class="view">
           <label><%= task.description %></label>
-          <%= button_to "x", house_chore_task_path(task.house_chore, :task_id => task.id), method: :delete, :class => "destroy" %>
+          <%= button_to "x", [@house_chore, task] :method => :delete, :class => "destroy" %>
         </div>
       </li>
       <% end %>
+		</ul>
+    <div class="assignment-form">
       <%= form_for(@user_chore) do |f| %>
         <%= f.hidden_field :house_chore_id, :value => @house_chore.id %>
         <%= f.label :user %>
@@ -29,7 +31,7 @@
         <%= f.date_select :due_date %>
         <%= f.submit "Assign a user to a chore" %>
       <% end %>
-		</ul>
+    </div>
 
 	</section>
 
