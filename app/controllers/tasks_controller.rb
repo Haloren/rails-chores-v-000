@@ -7,8 +7,10 @@ class TasksController < ApplicationController
     @task = @house_chore.tasks.build(task_params)
 
     if @task.save
-
-       redirect_to house_chore_path(@house_chore)
+      respond_to do |f|
+        f.json {render :json => @task}
+        f.html {redirect_to house_chore_path(@house_chore)}
+      end
     else
       raise params.inspect
       flash[:notice] = "Task was not saved"
@@ -19,7 +21,7 @@ class TasksController < ApplicationController
 
   def destroy
     @house_chore = HouseChore.find(params[:house_chore_id])
-    @task = Task.find(params[:task_id])
+    @task = Task.find(params[:task_id] || params[:id])
     @task.destroy
 
     redirect_to house_chore_path(@house_chore)

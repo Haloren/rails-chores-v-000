@@ -1,3 +1,17 @@
+<%= button_to "x", house_chore_task_path(task.house_chore, :task_id => task.id), method: :delete, :class => "destroy" %>
+
+//use this one in house_chores#show:
+<%= button_to "x", [@house_chore, task], :method => :delete, :class => "destroy" %>
+
+
+JS NOTES:
+
+tasks#create (in tasks_controller)
+  render :json => JSON::parse(@task.to_json).merge(:delete_path => house_chore_task_path(@house_chore, :id => @task.id))
+
+
+
+
 <%= render partial: "house_chores/house_chores_form", locals: { user_chore: @user_chore, house_chore: @house_chore, users: @users } %>
 
 actual Notes
