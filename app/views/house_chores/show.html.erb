@@ -14,9 +14,13 @@
 	<section class="main">
 		<ul class="todo-list">
       <% @house_chore.tasks.each do |task| %>
-      <li>
+      <li class="task" id="task_<%= task.id %>">
         <div class="view">
           <label><%= task.description %></label>
+          <form action="<%= house_chore_path(task.house_chore, task) %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE" />
+            <button type="submit" class="destroy"></button>
+          </form>
           <%= button_to "x", house_chore_task_path(task.house_chore, :task_id => task.id), method: :delete, :class => "destroy" %>
         </div>
       </li>

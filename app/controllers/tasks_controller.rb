@@ -7,8 +7,7 @@ class TasksController < ApplicationController
     @task = @house_chore.tasks.build(task_params)
 
     if @task.save
-      render :json => JSON::parse(@task.to_json).merge(:delete_path => house_chore_task_path(@house_chore, :id => @task.id)).to_json
-      # redirect_to house_chore_path(@house_chore)
+     redirect_to house_chore_path(@house_chore)
     else
       raise params.inspect
       flash[:notice] = "Task was not saved"
