@@ -16,4 +16,5 @@
 // = require handlebars.min
 // = require user_chores.js
 // = require tasks.js
+// = require houses.js
 // = require_tree .

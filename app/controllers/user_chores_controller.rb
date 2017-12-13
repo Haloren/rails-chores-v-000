@@ -13,6 +13,8 @@ class UserChoresController < ApplicationController
 
   def show
     @overdue_chores = UserChore.overdue
+
+    render :json => @overdue_chores.to_json({:include => {:user => {}, :house_chore => {:include => :chore}}})
   end
 
   def new

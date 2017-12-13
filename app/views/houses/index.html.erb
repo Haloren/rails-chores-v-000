@@ -44,8 +44,8 @@
 		<ul class="todo-list">
       <% @houses.each do |house| %>
       <li class="house" id="house_<%= house.id %>">
-        <div class="view">
-          <label><%= link_to house.name, house_path(house) %></label>
+        <div class="view" id="div-view">
+          <label><%= link_to house.name, house_path(house), :id => "house-link" %></label>
         </div>
       </li>
       <% end %>

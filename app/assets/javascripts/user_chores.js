@@ -42,3 +42,18 @@ $(function(){
 
   })
 })
+
+$(function() {
+  $("a.overdue").on( "click", function(e)  {
+    e.preventDefault()
+
+    $.get(this.href).success(function(json) {
+      var $ol = $("div.overdue_chores ol")
+      $ol.html("")
+
+      json.forEach(function(overdue_chore) {
+          $ol.append(`<li><h3>${overdue_chore.user.username} || ${overdue_chore.house_chore.chore.name}</h3></li>`);
+      })
+    })
+  })
+})
