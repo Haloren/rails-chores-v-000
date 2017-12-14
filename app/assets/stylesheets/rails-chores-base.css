@@ -84,12 +84,25 @@ input[type="checkbox"] {
 
 .todoapp h1 {
 	position: absolute;
-	top: -155px;
+	top: -130px;
 	width: 100%;
 	font-size: 72px;
 	font-weight: 100;
 	text-align: center;
-	color: rgba(175, 47, 47, 0.35);
+	color: #cd9;
+	-webkit-text-rendering: optimizeLegibility;
+	-moz-text-rendering: optimizeLegibility;
+	text-rendering: optimizeLegibility;
+}
+
+.todoapp h2 {
+	position: absolute;
+	top: -45px;
+	width: 100%;
+	font-size: 24px;
+	font-weight: 100;
+	text-align: center;
+	color: #cd9;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
