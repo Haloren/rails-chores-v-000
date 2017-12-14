@@ -108,6 +108,21 @@ input[type="checkbox"] {
 	text-rendering: optimizeLegibility;
 }
 
+.new_house_chore {
+	padding: 15px 15px 15px 15px;
+	margin-left: 45px;
+	display: block;
+	line-height: 1.2em;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.submit {
+	background: rgb(0, 225, 80);
+	color: #fff;
+	font-size: 100%;
+}
+
 .new-todo,
 .edit {
 	position: relative;
