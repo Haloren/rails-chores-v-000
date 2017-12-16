@@ -16,7 +16,10 @@ class HousesController < ApplicationController
     @house_chore = HouseChore.new
     @house_chores = HouseChore.all
 
-    render :json => @house.to_json(:only => :city)
+    respond_to do |f|      
+      f.json {render :json => @house}
+      f.html
+    end
   end
 
 

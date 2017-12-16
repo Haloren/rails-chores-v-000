@@ -6,18 +6,33 @@
 // });
 
 (function() {
-  $(document).on('click', '.house-link',  function(e) {
-    e.preventDefault()
+  $(document).on('mouseover', '.house-link',  function(e) {
+    // e.preventDefault()
 
     var $href = $(this).context.lastElementChild.attributes.href.value
 
     $.get($href).success(function(json) {
 
-      // console.log(json)
-      var $ul = $('#house-details_' + this.url.slice(-1))
-      $ul.html("")
+      var $p = $('#house-details_' + this.url.slice(-1))
+      $p.html("")
 
-      $ul.append(`${json.city}`)
+      $p.append(`<h5>${json.city}</h5>`)
+    })
+
+  })
+})();
+
+(function() {
+  $(document).on('mouseout', '.house-link',  function(e) {
+    // e.preventDefault()
+
+    var $href = $(this).context.lastElementChild.attributes.href.value
+
+    $.get($href).success(function(json) {
+
+      var $p = $('#house-details_' + this.url.slice(-1))
+      $p.empty()
+
     })
 
   })
