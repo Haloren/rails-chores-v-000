@@ -15,6 +15,8 @@ class HousesController < ApplicationController
     @house = House.find(params[:id])
     @house_chore = HouseChore.new
     @house_chores = HouseChore.all
+
+    render :json => @house.to_json(:only => :city)
   end
 
 

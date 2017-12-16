@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root :to => "welcome#home"
+  root :to => "houses#index"
 
   get '/sign_up' => 'users#new'
   get '/login'   => 'sessions#new'
