@@ -5,10 +5,10 @@
 		<br></br>
 		<div id="chore-assignment-form">
 			<%= form_for(@house_chore) do |f| %>
-				<%= f.label "Chore Assignment:" %>
+				<%= f.label "Add a Chore:" %>
 				<%= f.collection_select :chore_id, Chore.all, :id, :name%>
 	      <%= f.hidden_field :house_id, :value => @house.id %>
-				<%= f.submit "Make it so", :class => "submit" %>
+				<%= f.submit "Add", :class => "submit" %>
 			<% end %>
 		</div>
 
