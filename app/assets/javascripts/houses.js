@@ -42,6 +42,7 @@
 (function() {
   $(document).on("click", ".js-prev", function(e) {
     e.preventDefault();
+
     alert("Yo!");
   })
 })();
@@ -49,7 +50,16 @@
 (function() {
   $(document).on("click", ".js-next", function(e) {
     e.preventDefault();
-    alert("Yo!");
+    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    $.get("/houses/" + nextId + ".json", function(data) {
+      console.log(data);
+      $(".houseName").text(data["name"]);
+      $(".houseCity").text(data["city"]);
+      // debugger
+      $(".house_choreChoreName").text(data["house_chore"]["chore"]["name"]);
+      // re-set the id to the current on the link
+      $(".js-next").attr("data-id", data["id"]);
+    })
   })
 })();
 //IIFE

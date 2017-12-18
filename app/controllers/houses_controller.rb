@@ -16,11 +16,15 @@ class HousesController < ApplicationController
     @house_chore = HouseChore.new
     @house_chores = HouseChore.all
 
-    respond_to do |f|      
-      f.json {render :json => @house}
-      f.html
+    respond_to do |f|
+      f.json { render :json => @house.to_json }
+      f.html { render :show }
     end
   end
 
+  def house_data
+    house = House.find(params[:id])
+    render json: house.to_json(:include => [:chore, :user, :user_chore, :house_chore])
+  end
 
 end
