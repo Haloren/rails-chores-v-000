@@ -20,9 +20,14 @@ $(function(){
     var $ol = $("div.user_chores ol")
     $ol.html("")
 
+    $ol.append(`<h2> Current Chore Cycle: </h2>`)
       json.forEach(function(user_chore) {
 
-        $ol.append(`<li><h3>${user_chore.user.username} || ${user_chore.house_chore.chore.name} || ${user_chore.due_date} </h3></li>`);
+        $ol.append(`
+          <li><h3>${user_chore.user.username} ||
+          ${user_chore.house_chore.chore.name} ||
+          ${user_chore.due_date} </h3></li>
+          `);
       })
     })
   })
