@@ -37,6 +37,21 @@
 
   })
 })();
+
+
+(function() {
+  $(document).on("click", ".js-prev", function(e) {
+    e.preventDefault();
+    alert("Yo!");
+  })
+})();
+
+(function() {
+  $(document).on("click", ".js-next", function(e) {
+    e.preventDefault();
+    alert("Yo!");
+  })
+})();
 //IIFE
 // $(function() {
 //   const target = document
