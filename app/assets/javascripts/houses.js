@@ -13,10 +13,10 @@
 
     $.get($href).success(function(json) {
 
-      var $p = $('#house-details_' + this.url.slice(-1))
-      $p.html("")
+      var $li = $('#house-details_' + this.url.slice(-1))
+      $li.html("")
 
-      $p.append(`<h5>${json.city}</h5>`)
+      $li.append(`<h5>${json.city}</h5>`)
     })
 
   })
@@ -30,8 +30,8 @@
 
     $.get($href).success(function(json) {
 
-      var $p = $('#house-details_' + this.url.slice(-1))
-      $p.empty()
+      var $li = $('#house-details_' + this.url.slice(-1))
+      $li.empty()
 
     })
 
