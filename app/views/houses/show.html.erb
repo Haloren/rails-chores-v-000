@@ -24,8 +24,8 @@
 
 	<section class="main">
 		<ul class="todo-list">
-			<% if @house_chore %>
-			  <% @house_chores.each do |house_chore| %>
+			<% if @house.house_chores %>
+			  <% @house.house_chores.each do |house_chore| %>
 			  <li>
 			    <div class="view">
 			      <label><%= link_to house_chore.chore.name, house_chore_path(house_chore) %></label>
