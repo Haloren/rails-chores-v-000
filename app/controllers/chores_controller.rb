@@ -9,6 +9,10 @@ class ChoresController < ApplicationController
 
   def show
     @chore = Chore.find(params[:id])
+    respond_to do |f|
+      f.json { render :json => @chore }
+      f.html { render :show }
+    end
   end
 
   def create

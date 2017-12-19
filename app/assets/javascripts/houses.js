@@ -61,7 +61,7 @@
     var nextId = parseInt($(".js-next").attr("data-attribute")) + 1;
 
     $.get("/houses/" + nextId + ".json", function(data) {
-      // console.log(data);
+      console.log(data);
       $(".houseName").text(data["name"]);
       $(".houseCity").text(data["city"]);
       // $(".choreName").text(data["chore"]["name"]);

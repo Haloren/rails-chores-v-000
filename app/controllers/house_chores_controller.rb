@@ -19,6 +19,11 @@ class HouseChoresController < ApplicationController
     @task = @house_chore.tasks.build
     @user_chore = UserChore.new
     @users = User.house(current_user.house_id)
+
+    respond_to do |f|
+      f.json { render :json => @house_chore }
+      f.html { render :show }
+    end
   end
 
   def destroy
