@@ -22,9 +22,9 @@ class HousesController < ApplicationController
     end
   end
 
-  def house_data
-    house = House.find(params[:id])
-    render json: house.to_json(:include => [:chore, :user, :user_chore, :house_chore])
-  end
+  # def house_data
+  #   house = House.find(params[:id])
+  #   render json: house.to_json
+  # end
 
 end

@@ -42,26 +42,49 @@
 (function() {
   $(document).on("click", ".js-prev", function(e) {
     e.preventDefault();
+    var prevId = parseInt($(".js-prev").attr("data-attribute")) -1;
 
-    alert("Yo!");
+    $.get("/houses/" + prevId + ".json", function(data) {
+      console.log(data)
+      $(".houseName").text(data["name"]);
+      $(".houseCity").text(data["name"]);
+
+      // re-set the id to the current on the link
+      $(".js-prev").attr("data-attribute", data["id"]);
+    })
   })
 })();
 
 (function() {
   $(document).on("click", ".js-next", function(e) {
     e.preventDefault();
-    var nextId = parseInt($(".js-next").attr("data-id")) + 1;
+    var nextId = parseInt($(".js-next").attr("data-attribute")) + 1;
+
     $.get("/houses/" + nextId + ".json", function(data) {
-      console.log(data);
+      // console.log(data);
       $(".houseName").text(data["name"]);
       $(".houseCity").text(data["city"]);
-      // debugger
-      $(".house_choreChoreName").text(data["house_chore"]["chore"]["name"]);
+      // $(".choreName").text(data["chore"]["name"]);
       // re-set the id to the current on the link
-      $(".js-next").attr("data-id", data["id"]);
-    })
-  })
+      $(".js-next").attr("data-attribute", data["id"]);
+    });
+  });
 })();
+
+// function nextBook(){
+//   $(".next_link").on("click", function(e){
+//     e.preventDefault();
+//     var nextId = parseInt($(".next_link").attr("data-attribute")) + 1;
+//     $.get("/books/" + nextId + ".json", function(data) {
+//       $(".bookTitle").text(data["title"]);
+//       $(".bookAuthor").text(data["author"]);
+//       $(".bookSummary").text(data["summary"]);
+//       // re-set the id to current on the link
+//       $(".next_link").attr("data-attribute", data["id"]);
+//       debugger;
+//     });
+//   });
+// }
 //IIFE
 // $(function() {
 //   const target = document
