@@ -47,7 +47,7 @@
     $.get("/houses/" + prevId + ".json", function(data) {
       console.log(data)
       $(".houseName").text(data["name"]);
-      $(".houseCity").text(data["name"]);
+      $(".houseCity").text(`The cleanest house in ${data["city"]}!`);
 
       // re-set the id to the current on the link
       $(".js-prev").attr("data-attribute", data["id"]);
@@ -59,14 +59,29 @@
   $(document).on("click", ".js-next", function(e) {
     e.preventDefault();
     var nextId = parseInt($(".js-next").attr("data-attribute")) + 1;
-
+    var $ul = $('.todo-list')
+    $ul.html("")
     $.get("/houses/" + nextId + ".json", function(data) {
       console.log(data);
       $(".houseName").text(data["name"]);
-      $(".houseCity").text(data["city"]);
+      $(".houseCity").text(`The cleanest house in ${data["city"]}!`);
+      for (var i = 0; i < data["chores"].length; i++) {
+        var chore = data["chores"][i]
+        var newHtml = " "
+        newHtml += `<li>`
+        newHtml += `<div class="view">`
+        newHtml += `<label>${chore.name}</label>`
+        newHtml += `</div>`
+        newHtml += `</li>`
+        $ul.append(newHtml)
+      }
+
       // $(".choreName").text(data["chore"]["name"]);
       // re-set the id to the current on the link
+
+
       $(".js-next").attr("data-attribute", data["id"]);
+
     });
   });
 })();

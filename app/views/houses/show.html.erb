@@ -5,8 +5,8 @@
 			<%= link_to 'Next', house_path(@house.next), :class => "js-next", :"data-attribute" => @house.id %>
 		</center>
 
-		<h1><%= @house.name %></h1>
-		<h2>The cleanest house in <%= @house.city %>!</h2>
+		<h1 class="houseName"><%= @house.name %></h1>
+		<h2 class="houseCity">The cleanest house in <%= @house.city %>!</h2>
 		<br></br>
 
 

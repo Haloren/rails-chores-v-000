@@ -44,7 +44,7 @@
 </section>
 
 <script id="task-template" type="text/x-handlebars-template">
-  <li class="task" id="task_{{{id}}}">
+  <li class="task" id="task_{{id}}">
     <div class="view">
       <label>{{description}}</label>
       <form class="button_to" method="post" action="/house_chores/<%= @house_chore.id %>/tasks/{{id}}">
