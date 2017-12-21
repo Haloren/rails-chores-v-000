@@ -43,12 +43,27 @@
   $(document).on("click", ".js-prev", function(e) {
     e.preventDefault();
     var prevId = parseInt($(".js-prev").attr("data-attribute")) -1;
-
+    var $ul = $('.todo-list')
+    $ul.html("")
     $.get("/houses/" + prevId + ".json", function(data) {
       console.log(data)
       $(".houseName").text(data["name"]);
       $(".houseCity").text(`The cleanest house in ${data["city"]}!`);
-
+      for (var i = 0; i < data["chores"].length; i++) {
+        var chore = data["chores"][i]
+        var newHtml = " "
+        newHtml += `<li>`
+        newHtml += `<div class="view">`
+        newHtml += `<label>`
+        newHtml += `<a href="/house_chores/${chore.id}"</a>${chore.name}`
+        newHtml += `</label>`
+        newHtml += `<form class="button_to" method="post" action="/house_chores/${chore.id}">`
+        newHtml += `<input type="hidden" name="_method" value="delete">`
+        newHtml += `<input class="destroy" type="submit" value="x">`
+        newHtml += `</div>`
+        newHtml += `</li>`
+        $ul.append(newHtml)
+      }
       // re-set the id to the current on the link
       $(".js-prev").attr("data-attribute", data["id"]);
     })
@@ -70,7 +85,12 @@
         var newHtml = " "
         newHtml += `<li>`
         newHtml += `<div class="view">`
-        newHtml += `<label>${chore.name}</label>`
+        newHtml += `<label>`
+        newHtml += `<a href="/house_chores/${chore.id}"</a>${chore.name}`
+        newHtml += `</label>`
+        newHtml += `<form class="button_to" method="post" action="/house_chores/${chore.id}">`
+        newHtml += `<input type="hidden" name="_method" value="delete">`
+        newHtml += `<input class="destroy" type="submit" value="x">`
         newHtml += `</div>`
         newHtml += `</li>`
         $ul.append(newHtml)
