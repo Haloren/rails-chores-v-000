@@ -43,7 +43,9 @@
   $(document).on("click", ".js-prev", function(e) {
     e.preventDefault();
     var prevId = parseInt($(".js-prev").attr("data-attribute")) -1;
+
     var $ul = $('.todo-list')
+
     $ul.html("")
     $.get("/houses/" + prevId + ".json", function(data) {
       console.log(data)
@@ -66,6 +68,7 @@
       }
       // re-set the id to the current on the link
       $(".js-prev").attr("data-attribute", data["id"]);
+      $(".js-next").attr("data-attribute", data.id - 1);
     })
   })
 })();
@@ -101,6 +104,7 @@
 
 
       $(".js-next").attr("data-attribute", data["id"]);
+      $(".js-prev").attr("data-attribute", data.id - 1);
 
     });
   });
