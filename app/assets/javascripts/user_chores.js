@@ -14,7 +14,8 @@ $(function(){
 
 $(function(){
   $("a.load_user_chores").on("click", function(e){
-    e.preventDefault();;
+    e.preventDefault();
+    $("div.user_chores ol").toggle('slow');
 
   $.get(this.href).success(function(json) {
     var $ol = $("div.user_chores ol")
@@ -37,6 +38,7 @@ $(function(){
 $(function() {
   $("a.overdue").on( "click", function(e)  {
     e.preventDefault()
+    $("div.overdue_chores ol").toggle('slow');
 
     $.get(this.href).success(function(json) {
       var $ol = $("div.overdue_chores ol")
