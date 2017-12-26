@@ -117,6 +117,10 @@ input[type="checkbox"] {
 	font-weight: bold;
 }
 
+.overdue_chores {
+	color: red;
+}
+
 .submit {
 	background: rgb(0, 225, 80);
 	color: #fff;
