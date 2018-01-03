@@ -13,7 +13,13 @@ class UserChoresController < ApplicationController
     # @user_chore = UserChore.find_by(params[:user_chore_id])
 
     # render 'user_chores/index', :layout => false
-    render :json => @user_chores.to_json({:include => {:user => {}, :house_chore => {:include => :chore}}})
+    respond_to do |f|
+      f.json { render :json => @user_chores.to_json({:include =>
+                                                    {:user => {}, :house_chore =>
+                                                    {:include => :chore}}}) }
+      f.html { render :index }
+    end
+
   end
 
   def show
@@ -32,8 +38,12 @@ class UserChoresController < ApplicationController
     @user_chore = UserChore.new(user_chore_params)
 
     if @user_chore.save
-      #raise params.inspect
-      redirect_to user_chores_path
+      # raise params.inspect
+      respond_to do |f|
+        f.json { render :json => @user_chore.to_json }
+        f.html { redirect_to user_chores_path }
+      end
+
     else
 
       render :'house_chores/show'

@@ -27,7 +27,9 @@ class HouseChoresController < ApplicationController
   end
 
   def destroy
+
     @house =  House.find(:id => params[:id])
+    byebug
     @house_chore = HouseChore.find_by(params[:chore_id])
     @house_chore.destroy
 
