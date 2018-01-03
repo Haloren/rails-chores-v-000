@@ -1,3 +1,5 @@
+Add "Overdue" header to user_chore.js
+
 houses#index.html.erb ...
 
 
