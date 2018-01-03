@@ -4,10 +4,15 @@ class UserChoresController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @user_chores = UserChore.includes(:user, :house_chore => :chore)
-    #@user_chore = UserChore.find_by(params[:user_chore_id])
+    # byebug
+    # @user_chores = UserChore.includes(:user, :house_chore => :chore)
+    @user_chores = UserChore.joins(:user).where(:users => { :house_id => current_user.house_id })
 
-    # render 'user_chores/index'#, :layout => false
+
+
+    # @user_chore = UserChore.find_by(params[:user_chore_id])
+
+    # render 'user_chores/index', :layout => false
     render :json => @user_chores.to_json({:include => {:user => {}, :house_chore => {:include => :chore}}})
   end
 
