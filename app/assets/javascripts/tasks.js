@@ -31,8 +31,8 @@ $(function(){
       var task = new Task(json);
       var taskLi = task.renderLi()
 
-
-      $('ul.todo-list').append(taskLi);
+      if task_id
+        $('ul.todo-list').append(taskLi);
     })
     .error(function(response) {
       console.log("Error", response)
