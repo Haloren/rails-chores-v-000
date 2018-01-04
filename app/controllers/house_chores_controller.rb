@@ -28,9 +28,10 @@ class HouseChoresController < ApplicationController
 
   def destroy
 
-    @house =  House.find(:id => params[:id])
-    byebug
+
+    # byebug
     @house_chore = HouseChore.find_by(params[:chore_id])
+    @house =  House.find(@house_chore.house_id)
     @house_chore.destroy
 
     redirect_to house_path(@house)
