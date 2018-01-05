@@ -41,13 +41,15 @@
 
 (function() {
   $(document).on("click", ".js-prev", function(e) {
-    e.preventDefault();
-    var prevId = parseInt($(".js-prev").attr("data-attribute")) -1;
 
+    e.preventDefault();
+    var prevId = parseInt($(".js-prev").attr("data-attribute"));
+    console.log(prevId)
     var $ul = $('.todo-list')
 
     $ul.html("")
     $.get("/houses/" + prevId + ".json", function(data) {
+
       console.log(data)
       $(".houseName").text(data["name"]);
       $(".houseCity").text(`The cleanest house in ${data["city"]}!`);
@@ -104,6 +106,7 @@
 
 
       $(".js-next").attr("data-attribute", data["id"]);
+    
       $(".js-prev").attr("data-attribute", data.id - 1);
 
     });
