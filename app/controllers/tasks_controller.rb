@@ -12,7 +12,7 @@ class TasksController < ApplicationController
         f.html {redirect_to house_chore_path(@house_chore)}
       end
     else
-      raise params.inspect
+      # raise params.inspect
       flash[:notice] = "Task was not saved"
 
       render :'house_chore/show'

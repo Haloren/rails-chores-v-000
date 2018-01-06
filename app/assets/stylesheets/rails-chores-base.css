@@ -192,11 +192,13 @@ label[for='toggle-all'] {
 	list-style: none;
 }
 
+
 .todo-list li {
 	position: relative;
 	font-size: 20px;
 	border-bottom: 1px solid #ededed;
 }
+
 
 .todo-list li:last-child {
 	border-bottom: none;
@@ -290,6 +292,8 @@ label[for='toggle-all'] {
 .todo-list li.editing:last-child {
 	margin-bottom: -1px;
 }
+
+
 
 .house-details {
 	padding: 15px, 60px, 15px, 15px;
@@ -402,6 +406,10 @@ html .clear-completed:active {
 .info a:hover {
 	text-decoration: underline;
 
+}
+
+.assignment {
+	
 }
 
 

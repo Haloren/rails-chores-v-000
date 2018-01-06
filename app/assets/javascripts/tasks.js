@@ -10,15 +10,17 @@ $(function() {
 
 
 Task.prototype.renderLi = function() {
- return Task.template(this)
+  return Task.template(this)
 }
 // working AJAX:
 $(function(){
   $("#new_task").on("submit", function(e){
     e.preventDefault()
+    alert("yo!")
     const $form = $(this);
     const action = $form.attr("action");
     const params = $form.serialize();
+
 
     $.ajax({
       url: action,
@@ -29,10 +31,12 @@ $(function(){
     .success(function(json) {
       $('#task_description').val("");
       var task = new Task(json);
-      var taskLi = task.renderLi()
 
-      if task_id
-        $('ul.todo-list').append(taskLi);
+      var taskLi = task.renderLi()
+      debugger
+
+      $('ul.todo-list').prepend(taskLi);
+
     })
     .error(function(response) {
       console.log("Error", response)
