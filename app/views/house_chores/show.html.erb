@@ -13,13 +13,15 @@
 
 	<section class="main">
 		<ul class="todo-list">
-      <% @house_chore.tasks.each do |task| %>
-      <li class="task" id="task_<%= task.id %>">
-        <div class="view">
-          <label><%= task.description %></label>
-          <%= button_to "x", [@house_chore, task], :method => :delete, :class => "destroy" %>
-        </div>
-      </li>
+      <% if @task.id %>
+        <% @house_chore.tasks.each do |task| %>
+        <li class="task" id="task_<%= task.id %>">
+          <div class="view">
+            <label><%= task.description %></label>
+            <%= button_to "x", [@house_chore, task], :method => :delete, :class => "destroy" %>
+          </div>
+        </li>
+        <% end %>
       <% end %>
     </ul>
 
