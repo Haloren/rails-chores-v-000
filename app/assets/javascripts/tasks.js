@@ -35,7 +35,7 @@ $(function(){
       var taskLi = task.renderLi()
       debugger
 
-      $('ul.todo-list').prepend(taskLi);
+      $('ul.todo-list').append(taskLi);
 
     })
     .error(function(response) {
