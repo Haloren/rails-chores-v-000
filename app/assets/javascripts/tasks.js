@@ -13,13 +13,14 @@ Task.prototype.renderLi = function() {
   return Task.template(this)
 }
 // working AJAX:
+console.log("Sart")
 $(function(){
-  $("#new_task").on("submit", function(e){
+  $("form#new_task").on("submit", function(e){
+    console.log("IN SUBMIT CALLBACK");
     e.preventDefault()
-    alert("yo!")
-    const $form = $(this);
-    const action = $form.attr("action");
-    const params = $form.serialize();
+    var $form = $(this);
+    var action = $form.attr("action");
+    var params = $form.serialize();
 
 
     $.ajax({
@@ -31,10 +32,7 @@ $(function(){
     .success(function(json) {
       $('#task_description').val("");
       var task = new Task(json);
-
       var taskLi = task.renderLi()
-      debugger
-
       $('ul.todo-list').append(taskLi);
 
     })

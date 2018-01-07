@@ -17,7 +17,9 @@ $(function(){
     e.preventDefault();
     $("div.user_chores ol").toggle('slow');
 
+
   $.get(this.href).success(function(json) {
+    // debugger
     var $ol = $("div.user_chores ol")
     $ol.html("")
 

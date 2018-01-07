@@ -29,7 +29,7 @@ class UserChore < ApplicationRecord
     self.status == STATUS[:incomplete]
   end
 
-  
-  scope :overdue, -> { where "due_date <= ?", Date.today }
+
+  scope :overdue, -> { where "due_date <= ?", Date.today, }
 
 end

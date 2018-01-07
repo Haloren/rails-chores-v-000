@@ -15,9 +15,9 @@ class HouseChoresController < ApplicationController
   end
 
   def show
-    
+
     @house_chore = HouseChore.find(params[:id])
-    @task = @house_chore.tasks.build
+    @task = Task.new
     @user_chore = UserChore.new
     @users = User.house(current_user.house_id)
 

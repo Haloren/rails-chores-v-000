@@ -7,13 +7,13 @@
 		<h1><%= @house_chore.chore.name %></h1>
 		<%= form_for([@house_chore, @task]) do |f| %>
 			<%= f.text_field :description, :class => "new-todo", :placeholder => (@task.errors.full_messages_for(:description).first || "Create a new chore task..." ) %>
-			<%= f.submit :class => "hidden" %>
+			<%= f.submit :class => "hidden", :data => { :disable_with => false } %>
 		<% end %>
 	</header>
 
 	<section class="main">
 		<ul class="todo-list">
-      <% if @task.id %>
+
         <% @house_chore.tasks.each do |task| %>
         <li class="task" id="task_<%= task.id %>">
           <div class="view">
@@ -22,7 +22,7 @@
           </div>
         </li>
         <% end %>
-      <% end %>
+
     </ul>
 
     <br>
