@@ -30,6 +30,6 @@ class UserChore < ApplicationRecord
   end
 
 
-  scope :overdue, -> { where "due_date <= ?", Date.today, }
+  scope :overdue, -> { where "due_date <= ?", Date.today }
 
 end
