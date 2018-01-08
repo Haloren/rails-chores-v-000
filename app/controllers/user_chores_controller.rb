@@ -41,7 +41,9 @@ class UserChoresController < ApplicationController
     @user_chore = UserChore.new(user_chore_params)
 
     if @user_chore.save
-      redirect_to house_path(@user.house)
+      # byebug
+      redirect_to house_path(current_user.house_id)
+
 
     else
 
