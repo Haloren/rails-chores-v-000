@@ -4,14 +4,14 @@ class UserChoresController < ApplicationController
   load_and_authorize_resource
 
   def index
-    # byebug
+
     @user_chores = UserChore.includes(:user, :house_chore => :chore).where(:users => { :house_id => current_user.house_id })
     # @user_chores = UserChore.joins(:user).where(:users => { :house_id => current_user.house_id })
 
 
 
     # @user_chore = UserChore.find_by(params[:user_chore_id])
-
+    # byebug
     # render 'user_chores/index', :layout => false
     render :json => @user_chores.to_json({:include => {:user => {}, :house_chore => {:include => :chore}}})
     # respond_to do |f|
@@ -41,13 +41,7 @@ class UserChoresController < ApplicationController
     @user_chore = UserChore.new(user_chore_params)
 
     if @user_chore.save
-
-      respond_to do |f|
-        f.json { render :json => @user_chores.to_json({:include =>
-                                                      {:user => {}, :house_chore =>
-                                                      {:include => :chore}}}) }
-        f.html { redirect_to user_chores_path }
-      end
+      redirect_to house_path(@user.house)
 
     else
 

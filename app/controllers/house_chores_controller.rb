@@ -31,7 +31,7 @@ class HouseChoresController < ApplicationController
 
 
     # byebug
-    @house_chore = HouseChore.find_by(params[:chore_id])
+    @house_chore = HouseChore.find_by(params[:house_chore_id])
     @house =  House.find_by(params[:house_id])
     @house_chore.destroy
 
