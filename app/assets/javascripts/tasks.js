@@ -13,10 +13,8 @@ Task.prototype.renderLi = function() {
   return Task.template(this)
 }
 // working AJAX:
-console.log("Sart")
 $(function(){
   $("form#new_task").on("submit", function(e){
-    console.log("IN SUBMIT CALLBACK");
     e.preventDefault()
     var $form = $(this);
     var action = $form.attr("action");
