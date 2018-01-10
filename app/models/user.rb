@@ -22,11 +22,8 @@ class User < ApplicationRecord
       h.city = house_attributes[:city]
     end
   end
-  #
-  # def self.by_house(house_id)
-  #   self.where(“house_id == ?”, current_user.house_id)
-  # end
+
 
   scope :house, -> (id) { where(house_id: id) }
-  # scope :author, -> (name) { where(author_name: name) }
+  
 end
