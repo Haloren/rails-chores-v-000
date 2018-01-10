@@ -1,18 +1,19 @@
+// create prototype object
 function Task(attributes) {
   this.description = attributes.description;
   this.id = attributes.id;
 }
-
+// HandleBars syntax
 $(function() {
   Task.templateSource = $('#task-template').html()
   Task.template = Handlebars.compile(Task.templateSource);
 })
 
-
+//render the instance of the prototype object
 Task.prototype.renderLi = function() {
   return Task.template(this)
 }
-// working AJAX:
+// working AJAX request:
 $(function(){
   $("form#new_task").on("submit", function(e){
     e.preventDefault()
