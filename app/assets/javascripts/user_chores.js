@@ -1,17 +1,10 @@
-$(function(){
-  $("input.toggle").on("change", function(){
-    $(this).parents("form").trigger("submit")
-  })
-});
+// $(function(){
+//   $("input.toggle").on("change", function(){
+//     $(this).parents("form").trigger("submit")
+//   })
+// });
 
-// var HouseChore = function(json) {
-//   this.name = json.chore.name;
-// }
-//
-// HouseChore.prototype.getHTML = function() {
-//   return `${this.userName}`
-// };
-
+// toggle user_chores
 $(function(){
   $("a.load_user_chores").on("click", function(e){
     e.preventDefault();
@@ -19,24 +12,23 @@ $(function(){
 
 
   $.get(this.href).success(function(json) {
-    // debugger
     var $ol = $("div.user_chores ol")
     $ol.html("")
 
     $ol.append(`<h2> Current Chore Cycle: </h2>`)
       json.forEach(function(user_chore) {
 
-        $ol.append(`
-          <li><h3>${user_chore.user.username} ||
-          ${user_chore.house_chore.chore.name} ||
-          ${user_chore.due_date} </h3></li>
-          `);
+      $ol.append(`
+        <li><h3>${user_chore.user.username} ||
+        ${user_chore.house_chore.chore.name} ||
+        ${user_chore.due_date} </h3></li>
+        `);
       })
     })
   })
 })
 
-
+// toggle overdue chores
 $(function() {
   $("a.overdue").on( "click", function(e)  {
     e.preventDefault()
