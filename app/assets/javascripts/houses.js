@@ -60,6 +60,29 @@
       // re-set the id to the current on the link
       $(".js-prev").attr("data-attribute", data["id"]);
       $(".js-next").attr("data-attribute", data.id - 1);
+    }).fail(function(e) {
+      $.get("/houses/29.json", function(data) {
+        $(".houseName").text(data["name"]);
+        $(".houseCity").text(`The cleanest house in ${data["city"]}!`);
+        for (var i = 0; i < data["chores"].length; i++) {
+          var chore = data["chores"][i]
+          var newHtml = " "
+          newHtml += `<li>`
+          newHtml += `<div class="view">`
+          newHtml += `<label>`
+          newHtml += `<a href="/house_chores/${chore.id}"</a>${chore.name}`
+          newHtml += `</label>`
+          newHtml += `<form class="button_to" method="post" action="/house_chores/${chore.id}">`
+          newHtml += `<input type="hidden" name="_method" value="delete">`
+          newHtml += `<input class="destroy" type="submit" value="x">`
+          newHtml += `</div>`
+          newHtml += `</li>`
+          $ul.append(newHtml)
+        }
+        // re-set the id to the current on the link
+        $(".js-prev").attr("data-attribute", data["id"]);
+        $(".js-next").attr("data-attribute", data.id - 1);
+      })
     })
   })
 })();
@@ -95,7 +118,29 @@
 
       $(".js-next").attr("data-attribute", data["id"]);
       $(".js-prev").attr("data-attribute", data.id - 1);
-
-    });
+    }).fail(function(e) {
+      $.get("/houses/27.json", function(data) {
+        $(".houseName").text(data["name"]);
+        $(".houseCity").text(`The cleanest house in ${data["city"]}!`);
+        for (var i = 0; i < data["chores"].length; i++) {
+          var chore = data["chores"][i]
+          var newHtml = " "
+          newHtml += `<li>`
+          newHtml += `<div class="view">`
+          newHtml += `<label>`
+          newHtml += `<a href="/house_chores/${chore.id}"</a>${chore.name}`
+          newHtml += `</label>`
+          newHtml += `<form class="button_to" method="post" action="/house_chores/${chore.id}">`
+          newHtml += `<input type="hidden" name="_method" value="delete">`
+          newHtml += `<input class="destroy" type="submit" value="x">`
+          newHtml += `</div>`
+          newHtml += `</li>`
+          $ul.append(newHtml)
+        }
+        // re-set the id to the current on the link
+        $(".js-prev").attr("data-attribute", data["id"]);
+        $(".js-next").attr("data-attribute", data.id - 1);
+      })
+    })
   });
 })();
