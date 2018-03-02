@@ -18,7 +18,7 @@ group :development, :test do
 end
 # Use postgres as the database for ActiveRecord in production
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.21'
 end
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
