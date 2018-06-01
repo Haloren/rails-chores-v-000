@@ -27,6 +27,7 @@ button {
     color: #00BCE1;
 }
 
+
 body {
 	font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
@@ -57,7 +58,7 @@ input[type="checkbox"] {
 }
 
 .todoapp {
-	background: #fff;
+	background: rgba(0, 0, 0, 0.1);
 	margin: 130px 0 40px 0;
 	position: relative;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
@@ -87,9 +88,9 @@ input[type="checkbox"] {
 	top: -130px;
 	width: 100%;
 	font-size: 72px;
-	font-weight: 100;
+	font-weight: 200;
 	text-align: center;
-	color: #cd9;
+	color: #aaa;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
@@ -102,7 +103,7 @@ input[type="checkbox"] {
 	font-size: 24px;
 	font-weight: 100;
 	text-align: center;
-	color: #cd9;
+	color: #aaa;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
@@ -305,7 +306,7 @@ label[for='toggle-all'] {
 
 .todo-list li.house {
 	font-family: times;
-	color: #bbb;
+	color: #aaa;
 }
 
 .footer {

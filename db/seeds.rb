@@ -5,6 +5,7 @@ House.create(:name => 'El Rancho', :city => 'San Francisco')
 House.create(:name => 'Rankin', :city => 'Santa Cruz')
 House.create(:name => 'Ravenna', :city => 'Seattle')
 
+User.create(:username => 'Guest', :email => 'guest@email.com', :password => '123456', :house_id => 1, :admin => false)
 User.create(:username => 'Michael', :email => 'michael@yahoo.com', :password => '123456', :house_id => 1, :admin => false)
 User.create(:username => 'Ann Marie', :email => 'amv@yahoo.com', :password => '123456', :house_id => 1, :admin => true)
 User.create(:username => 'Kara', :email => 'kara@yahoo.com', :password => '123456', :house_id => 1, :admin => false)
