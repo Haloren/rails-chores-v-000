@@ -58,7 +58,7 @@ input[type="checkbox"] {
 }
 
 .todoapp {
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.8);
 	margin: 130px 0 40px 0;
 	position: relative;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
@@ -88,9 +88,9 @@ input[type="checkbox"] {
 	top: -130px;
 	width: 100%;
 	font-size: 72px;
-	font-weight: 200;
+	font-weight: 300;
 	text-align: center;
-	color: #aaa;
+	color: black;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
@@ -98,34 +98,41 @@ input[type="checkbox"] {
 
 .todoapp h2 {
 	position: absolute;
-	top: -45px;
+	top: -55px;
 	width: 100%;
-	font-size: 24px;
-	font-weight: 100;
+	font-size: 36px;
+	font-weight: 250;
 	text-align: center;
-	color: #aaa;
+	color: black;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
 }
 
 .new_house_chore {
-	padding: 15px 15px 15px 15px;
-	margin-left: 45px;
-	display: block;
+	padding: 45px, 15px, 15px, 15px;
+	margin-left: 162px;
+	display: inline;
 	line-height: 1.2em;
 	font-size: 1.4em;
-	font-weight: bold;
+	font-weight: 200;
+	color: #aaa;
 }
 
 .overdue_chores {
 	color: red;
 }
 
+#house_chore_chore_id {
+	color: #fff;
+	background-color: #000;
+}
+
 .submit {
-	background: rgb(0, 225, 80);
+	background: rgba(0, 0, 0, 0.8);
 	color: #fff;
 	font-size: 100%;
+	border-radius: 15px;
 }
 
 .new-todo,
@@ -251,7 +258,7 @@ label[for='toggle-all'] {
 	display: block;
 	line-height: 1.2;
 	transition: color 0.4s;
-	font-family: Arial, snas-serif;
+	font-family: Arial, sans-serif;
 }
 
 .todo-list li.completed label {
